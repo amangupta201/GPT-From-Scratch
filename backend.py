@@ -9,6 +9,25 @@ import pickle
 import uvicorn
 import os
 
+# Curated code patterns database (embed directly in backend.py)
+CODE_PATTERNS = {
+    "hello world function": "def hello_world():\n    return 'Hello, World!'",
+    "hello world": "print('Hello, World!')",
+    "add numbers function": "def add_numbers(a, b):\n    return a + b",
+    "sum function": "def calculate_sum(a, b):\n    return a + b",
+    "create list": "my_list = [1, 2, 3, 4, 5]",
+    "read csv file": "import pandas as pd\ndf = pd.read_csv('filename.csv')",
+    "write file": "with open('filename.txt', 'w') as f:\n    f.write('Hello')",
+    "read file": "with open('filename.txt', 'r') as f:\n    content = f.read()",
+    "for loop": "for i in range(5):\n    print(i)",
+    "while loop": "count = 0\nwhile count < 5:\n    print(count)\n    count += 1",
+    "dictionary": "my_dict = {'key': 'value', 'name': 'John'}",
+    "class person": "class Person:\n    def __init__(self, name):\n        self.name = name",
+    "try catch": "try:\n    result = risky_operation()\nexcept Exception as e:\n    print(f'Error: {e}')",
+    "import pandas": "import pandas as pd\ndf = pd.DataFrame(data)",
+    "api request": "import requests\nresponse = requests.get('https://api.example.com')",
+}
+
 app = FastAPI(title="Python Code Generator API", version="1.0.0")
 
 # Enable CORS for frontend
@@ -218,6 +237,40 @@ def clean_generated_text(text, prompt):
     return '\n'.join(cleaned_lines)
 
 
+def calculate_similarity(user_tokens, pattern_tokens):
+    """Calculate simple token overlap similarity"""
+    if not user_tokens or not pattern_tokens:
+        return 0.0
+
+    user_set = set(user_tokens)
+    pattern_set = set(pattern_tokens)
+
+    intersection = len(user_set & pattern_set)
+    union = len(user_set | pattern_set)
+
+    return intersection / union if union > 0 else 0.0
+
+
+def find_best_match(user_prompt):
+    """Find best matching code pattern"""
+    user_tokens = encode(user_prompt.lower())
+    best_match = None
+    best_score = 0
+    best_pattern = ""
+
+    for pattern, code in CODE_PATTERNS.items():
+        pattern_tokens = encode(pattern.lower())
+        similarity = calculate_similarity(user_tokens, pattern_tokens)
+
+        if similarity > best_score:
+            best_score = similarity
+            best_match = code
+            best_pattern = pattern
+
+    # Return match if similarity is above threshold
+    return (best_match, best_pattern) if best_score > 0.3 else (None, None)
+
+
 @app.on_event("startup")
 async def startup_event():
     """Load model on startup"""
@@ -238,131 +291,58 @@ async def health_check():
     return {"status": "healthy", "model_loaded": model is not None}
 
 
+# Modify your generate_code function
 @app.post("/generate", response_model=CodeResponse)
 async def generate_code(request: CodeRequest):
-    """Generate Python code based on prompt using enhanced templates"""
+    """Generate Python code using semantic search + model fallback"""
 
-    prompt_lower = request.prompt.lower()
-    max_tokens = request.max_tokens
+    try:
+        # First, try semantic search
+        matched_code, matched_pattern = find_best_match(request.prompt)
 
-    # Determine verbosity level based on max_tokens
-    if max_tokens <= 75:
-        verbosity = "minimal"
-    elif max_tokens <= 150:
-        verbosity = "standard"
-    else:
-        verbosity = "detailed"
+        if matched_code:
+            return CodeResponse(
+                generated_code=matched_code,
+                prompt=request.prompt,
+                success=True,
+                message=f"Generated using pattern matching (matched: {matched_pattern})"
+            )
 
-    # Data structures
-    if "list" in prompt_lower:
-        if "comprehension" in prompt_lower:
-            if verbosity == "minimal":
-                code = "squares = [x**2 for x in range(5)]"
-            elif verbosity == "standard":
-                code = "# List comprehension\nsquares = [x**2 for x in range(10)]\nprint(squares)"
-            else:
-                code = "# List comprehension examples\nsquares = [x**2 for x in range(10)]\nfiltered = [x for x in range(20) if x % 2 == 0]\nprint(f'Squares: {squares}')\nprint(f'Even numbers: {filtered}')"
-        else:
-            if verbosity == "minimal":
-                code = "my_list = [1, 2, 3]\nmy_list.append(4)"
-            elif verbosity == "standard":
-                code = "my_list = [1, 2, 3, 4, 5]\nmy_list.append(6)\nprint(my_list)"
-            else:
-                code = "my_list = [1, 2, 3, 4, 5]\nmy_list.append(6)\nmy_list.extend([7, 8])\nmy_list.remove(3)\nprint(f'Final list: {my_list}')\nprint(f'Length: {len(my_list)}')"
+        # If no good match, try your trained model
+        if model is not None:
+            formatted_prompt = f"Q: {request.prompt}\nA:"
+            context = torch.tensor(encode(formatted_prompt), dtype=torch.long, device=device).unsqueeze(0)
 
-    elif "dictionary" in prompt_lower or "dict" in prompt_lower:
-        if verbosity == "minimal":
-            code = "my_dict = {'key': 'value'}"
-        elif verbosity == "standard":
-            code = "my_dict = {'name': 'John', 'age': 30}\nprint(my_dict['name'])"
-        else:
-            code = "my_dict = {'name': 'John', 'age': 30, 'city': 'New York'}\nmy_dict['job'] = 'Developer'\nprint(my_dict.get('name', 'Unknown'))\nfor key, value in my_dict.items():\n    print(f'{key}: {value}')"
+            with torch.no_grad():
+                generated = model.generate(context, max_new_tokens=min(request.max_tokens, 100))
+                generated_text = decode(generated[0].tolist())
 
-    # Loops
-    elif "for loop" in prompt_lower:
-        if verbosity == "minimal":
-            code = "for i in range(5):\n    print(i)"
-        elif verbosity == "standard":
-            code = "for i in range(5):\n    print(f'Number: {i}')"
-        else:
-            code = "# Enhanced for loop with enumerate\nitems = ['apple', 'banana', 'cherry']\nfor index, item in enumerate(items):\n    print(f'{index}: {item}')\n\n# Loop with else clause\nfor i in range(3):\n    print(i)\nelse:\n    print('Loop completed normally')"
+            # Clean model output
+            cleaned_text = clean_generated_text(generated_text, formatted_prompt)
 
-    elif "while loop" in prompt_lower:
-        if verbosity == "minimal":
-            code = "count = 0\nwhile count < 3:\n    print(count)\n    count += 1"
-        elif verbosity == "standard":
-            code = "count = 0\nwhile count < 5:\n    print(f'Count: {count}')\n    count += 1"
-        else:
-            code = "count = 0\nwhile count < 5:\n    print(f'Count: {count}')\n    count += 1\n    if count == 3:\n        print('Halfway there!')\nprint('Loop finished')"
+            if len(cleaned_text.strip()) > 10:  # If model output is reasonable
+                return CodeResponse(
+                    generated_code=cleaned_text,
+                    prompt=request.prompt,
+                    success=True,
+                    message="Generated using trained model"
+                )
 
-    # Functions
-    elif "function" in prompt_lower or "def" in prompt_lower:
-        if verbosity == "minimal":
-            code = "def my_func(x):\n    return x * 2"
-        elif verbosity == "standard":
-            code = "def calculate_sum(a, b):\n    return a + b\n\nresult = calculate_sum(5, 3)\nprint(result)"
-        else:
-            code = "def calculate_sum(a, b=0):\n    \"\"\"Calculate sum with default parameter\"\"\"\n    return a + b\n\ndef greet(name, greeting='Hello'):\n    \"\"\"Greet someone with custom greeting\"\"\"\n    return f'{greeting}, {name}!'\n\n# Function usage\nresult = calculate_sum(5, 3)\nprint(f'Sum: {result}')\nprint(greet('Alice'))\nprint(greet('Bob', 'Hi'))"
+        # Final fallback
+        return CodeResponse(
+            generated_code=f"# Code for: {request.prompt}\n# Please provide more specific details",
+            prompt=request.prompt,
+            success=True,
+            message="Generated fallback response"
+        )
 
-    # Classes
-    elif "class" in prompt_lower:
-        if verbosity == "minimal":
-            code = "class Person:\n    def __init__(self, name):\n        self.name = name"
-        elif verbosity == "standard":
-            code = "class Person:\n    def __init__(self, name, age):\n        self.name = name\n        self.age = age\n    \n    def greet(self):\n        return f'Hello, I am {self.name}'"
-        else:
-            code = "class Person:\n    def __init__(self, name, age):\n        self.name = name\n        self.age = age\n    \n    def greet(self):\n        return f'Hello, I am {self.name}, {self.age} years old'\n    \n    def have_birthday(self):\n        self.age += 1\n        return f'Happy birthday! Now {self.age} years old'\n\nperson = Person('Alice', 25)\nprint(person.greet())\nprint(person.have_birthday())"
-
-    # File operations
-    elif "csv" in prompt_lower:
-        if verbosity == "minimal":
-            code = "import pandas as pd\ndf = pd.read_csv('file.csv')"
-        elif verbosity == "standard":
-            code = "import pandas as pd\n\ndf = pd.read_csv('data.csv')\nprint(df.head())"
-        else:
-            code = "import pandas as pd\n\n# Read and analyze CSV\ndf = pd.read_csv('data.csv')\nprint(f'Shape: {df.shape}')\nprint(f'Columns: {df.columns.tolist()}')\nprint('\\nFirst 5 rows:')\nprint(df.head())\nprint('\\nBasic statistics:')\nprint(df.describe())"
-
-    elif "read file" in prompt_lower:
-        if verbosity == "minimal":
-            code = "with open('file.txt', 'r') as f:\n    content = f.read()"
-        elif verbosity == "standard":
-            code = "with open('filename.txt', 'r') as file:\n    content = file.read()\n    print(content)"
-        else:
-            code = "# Read file line by line\nwith open('filename.txt', 'r') as file:\n    content = file.read()\n    print(f'File size: {len(content)} characters')\n    print(content)\n\n# Read specific lines\nwith open('filename.txt', 'r') as file:\n    for line_num, line in enumerate(file, 1):\n        print(f'Line {line_num}: {line.strip()}')"
-
-    # API requests
-    elif "api" in prompt_lower or "request" in prompt_lower:
-        if verbosity == "minimal":
-            code = "import requests\nresponse = requests.get('https://api.example.com')"
-        elif verbosity == "standard":
-            code = "import requests\n\nresponse = requests.get('https://api.example.com/data')\nif response.status_code == 200:\n    data = response.json()\n    print(data)"
-        else:
-            code = "import requests\nimport json\n\n# GET request\nresponse = requests.get('https://jsonplaceholder.typicode.com/posts/1')\nif response.status_code == 200:\n    data = response.json()\n    print(f'Title: {data.get(\"title\", \"No title\")}')\n    print(f'Status: {response.status_code}')\n\n# POST request\npayload = {'title': 'New Post', 'body': 'Content'}\npost_response = requests.post('https://jsonplaceholder.typicode.com/posts', json=payload)\nprint(f'POST Status: {post_response.status_code}')"
-
-    # Math operations
-    elif "math" in prompt_lower or "calculate" in prompt_lower:
-        if verbosity == "minimal":
-            code = "import math\nresult = math.sqrt(16)"
-        elif verbosity == "standard":
-            code = "import math\n\nresult = math.sqrt(16)\nprint(f'Square root: {result}')\nprint(f'Pi: {math.pi:.3f}')"
-        else:
-            code = "import math\nimport statistics\n\n# Basic math operations\nprint(f'Square root of 16: {math.sqrt(16)}')\nprint(f'Power: {math.pow(2, 3)}')\nprint(f'Factorial: {math.factorial(5)}')\n\n# Trigonometry\nangle = math.radians(45)\nprint(f'Sin(45°): {math.sin(angle):.3f}')\nprint(f'Cos(45°): {math.cos(angle):.3f}')\n\n# Statistics\ndata = [1, 2, 3, 4, 5]\nprint(f'Mean: {statistics.mean(data)}')\nprint(f'Standard deviation: {statistics.stdev(data):.2f}')"
-
-    # Default fallback
-    else:
-        if verbosity == "minimal":
-            code = f"# {request.prompt}\npass"
-        elif verbosity == "standard":
-            code = f"# Solution for: {request.prompt}\n\ndef solve():\n    # Implementation here\n    pass\n\nsolve()"
-        else:
-            code = f"# Comprehensive solution for: {request.prompt}\n\ndef solve_task():\n    \"\"\"\n    Implementation for: {request.prompt}\n    \"\"\"\n    # Add your logic here\n    pass\n\nif __name__ == '__main__':\n    solve_task()\n    print('Task completed')"
-
-    return CodeResponse(
-        generated_code=code,
-        prompt=request.prompt,
-        success=True,
-        message="Code generated successfully"
-    )
+    except Exception as e:
+        return CodeResponse(
+            generated_code=f"# Error generating code\n# Please try again",
+            prompt=request.prompt,
+            success=False,
+            message="Generation error"
+        )
 @app.get("/model-info")
 async def model_info():
     """Get information about the loaded model"""

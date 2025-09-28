@@ -1,0 +1,4229 @@
+Q: HTML output from web server
+A: 
+
+
+PHP!
+
+
+
+
+
+
+
+
+PHP!
+
+
+Hello world!
+
+
+
+
+
+Q: Basic selectors
+A: | `.blue`                   | Class selector (all elements with class `blue`) |
+| `.blue.red`               | All elements with class `blue` **and** `red` (a type of Compound selector) |
+| `:lang(en)`               | Element that matches :lang declaration, for example `` |
+
+Q: Hello, World!
+A: package main
+
+import "fmt"
+
+func main() {
+fmt.Println("Hello, 世界")
+}
+go run hello.go
+go build hello.go
+This will create  an executable file appropriate for your operating system in the current directory, which you can then run with the following command:
+./hello
+hello.exe
+
+Q: Hello World
+A: puts 'Hello World'
+$ ruby hello.rb
+Hello World
+
+Q: FizzBuzz
+A: package main
+// Simple fizzbuzz implementation
+import "fmt"
+
+func main() {
+for i := 1; i <= 100; i++ {
+s := ""
+if i % 3 == 0 {
+s += "Fizz"
+}
+if i % 5 == 0 {
+s += "Buzz"
+}
+if s != "" {
+fmt.Println(s)
+} else {
+fmt.Println(i)
+}
+}
+}
+
+Q: Alignment and padding
+A: - `=` forces the padding to be placed after the sign (numeric types only).
+`fill_char` (if omitted default is whitespace) is the character used for the padding.
+'{:~9s}, World'.format('Hello')
+# '~~~~Hello, World'
+'{:~^9s}'.format('Hello')
+# '~~Hello~~'
+'{:0=6d}'.format(-123)
+# '-00123'
+
+Q: Using window.prompt()
+A: - **default**: A default value for the input field (optional).
+var age = prompt("How old are you?");
+=====
+
+Q: Looping over iterables
+A: val list = listOf("Hello", "World", "!")
+for(str in list) {
+print(str)
+}
+for(i in 0..9) {
+print(i)
+}
+for((index, element) in iterable.withIndex()) {
+print("$element at index $index")
+}
+iterable.forEach {
+print(it.toString())
+}
+
+Q: Interpolated Verbatim Strings
+A: Console.WriteLine($@"Testing \n 1 2 {5 - 2}
+New line");
+
+Q: Disable Warnings Enhancements
+A: #pragma warning disable 0501
+#pragma warning disable CS0501
+
+Q: Side-by-side comparison
+A: | Inheritance: Table per concrete class (TPC)    | Yes
+
+
+
+
+| InMemory (for testing)   |      | Yes
+
+(3) : EF Core is built to work on Xamarin when support for .NET Standard is enabled in Xamarin.
+
+Q: Uninstalling packages
+A: npm uninstall
+The uninstall command for npm has five aliases that can also be used:
+npm remove
+npm rm
+npm r
+npm unlink
+npm un
+npm uninstall --save
+npm uninstall -S
+npm uninstall --save-dev
+npm uninstall -D
+npm uninstall --save-optional
+npm uninstall -O
+npm uninstall -g
+
+Q: Get value from last command with `v`
+A: ``` iex(1)> 1 + 1 2 iex(2)> v 2 iex(3)> 1 + v 3 ``` See also: http://stackoverflow.com/documentation/elixir/1283/iex-console-tips-tricks/4395/get-the-value-of-a-row-with-v
+
+Q: True, False and None
+A: True, False = False, True
+True   # False
+False  # True
+None = None  # SyntaxError: cannot assign to None
+True, False = False, True  # SyntaxError: can't assign to keyword
+None = None  # SyntaxError: can't assign to keyword
+
+Q: Introduction to context managers and the with statement
+A: open_file = open(filename)
+with open_file:
+file_contents = open_file.read()
+# the open_file object has automatically been closed.
+with open(filename) as open_file:
+file_contents = open_file.read()
+
+# the open_file object has automatically been closed.
+
+Q: Basic example
+A: batch_size = 32
+x = tf.placeholder(tf.float32, [batch_size, 10, 16])
+filter = tf.zeros([3, 16, 16])  # these should be real values, not 0
+output = tf.nn.conv1d(x, filter, stride=2, padding="VALID")
+With `padding="SAME"`, we would have had an output shape of `[batch_size, 5, 16]`.
+
+Q: Simple cross compilation with go build
+A: Compiling for Mac (64-bit):
+GOOS=darwin GOARCH=amd64 go build
+Compiling for Windows x86 processor:
+GOOS=windows GOARCH=386 go build
+GOOS=windows GOARCH=386 go build -o appname_win_x86.exe
+(or for easier machine consumption `go tool dist list -json`)
+
+Q: Copying a range of commits from one branch to another
+A: `git cherry-pick ..` will place every commit *after* A and up to and including B on top of the currently checked-out branch. `git cherry-pick ^..` will place commit A and every commit up to and including B on top of the currently checked-out branch.
+
+Q: Getting Started
+A: const express = require('express');
+
+const app = express();
+
+app.get('/ping', (request, response) => {
+response.send('pong');
+});
+
+app.listen(8080, 'localhost');
+> node app.js
+> curl http://localhost:8080/ping
+pong
+[1]: https://stackoverflow.com/documentation/node.js/482/npm#t=201608051756069974761
+
+Q: User Input
+A: user_input = raw_input()
+user_input = input()
+try:
+input = raw_input
+except NameError:
+pass
+
+Q: What is the Box Model?
+A: The browser creates a rectangle for each element in the HTML document. The Box Model describes how the padding, border, and margin are added to the content to create this rectangle.
+div {
+border: 5px solid red;
+margin: 50px;
+padding: 20px;
+}
+![Box Model for Above Example][3]
+
+Q: Breakpoints
+A: VSC has [built-in support][1] for debugging JavaScript.
+
+Q: Hello World from IRB
+A: $ irb
+puts "Hello World"
+Hello World
+print "Hello World"
+
+Q: Simple method annotation
+A: Documentation comments are placed directly above the method or class they describe. They begin with three forward slashes `///`, and allow meta information to be stored via XML.
+///
+/// Bar method description
+///
+public void Bar()
+{
+
+}
+
+Q: Use VB constants when available
+A: If MsgBox("Click OK") = vbOK Then
+If MsgBox("Click OK") = 1 Then
+Enter class to search
+
+Q: String interpolation
+A: String.Format("Hello, {0}", name)
+$"Hello, {name}"
+String.Format("The number of people is {0}/{1}", numPeople)
+
+Q: Class Structure
+A: Order of class members
+class Example {
+private int i;
+Example(int i) {
+this.i = i;
+}
+static Example getExample(int i) {
+return new Example(i);
+}
+@Override
+public String toString() {
+return "An example [" + i + "]";
+}
+}
+Grouping of class members
+
+Q: Your first program in Swift on a Mac (using a Playground)
+A: print("Hello world")
+[1]: https://itunes.apple.com/it/app/xcode/id497799835?mt=12
+
+Q: Using Streams to Implement Mathematical Functions
+A: This can be calculated with an arbitrary precision. E.g., for 101 terms:
+double pi = Math.sqrt(12) *
+IntStream.rangeClosed(0, 100)
+.mapToDouble(k -> Math.pow(-3, -1 * k) / (2 * k + 1))
+.sum();
+
+Q: Truthy and Falsy values
+A: In Ruby, there are exactly two values which are considered "falsy", and will return false when tested as a condition for an `if` expression. They are:
+Take, for example, the following code:
+def check_truthy(var_name, var)
+is_truthy = var ? "truthy" : "falsy"
+
+Q: Amending a commit
+A: git commit --amend
+git commit --amend -m "New commit message"
+git commit --amend --no-edit
+git commit --amend --reset-author
+git commit --amend --author "New Author "
+This means that if the earlier commit had already been pushed, after amending it you will have to `push --force`.
+
+Q: Importing .csv files
+A: Comma separated value files (CSVs) can be imported using `read.csv`, which wraps `read.table`, but uses `sep = ","` to set the delimiter to a comma.
+# get the file path of a CSV included in R's utils package
+csv_path
+## 1  2.70     A
+## 2  3.14     B
+## 3 10.00     A
+## 4 -7.00     A
+
+Q: Install Dapper from Nuget
+A: Tools > NuGet Package Manager > Manage Packages for Solution... (Visual Studio 2015)
+Install-Package Dapper
+Or for a specific version
+Install-Package Dapper -Version 1.42.0
+
+Q: Using std::pair
+A: #include
+std::pair foo(int a, int b) {
+return std::make_pair(a+b, a-b);
+}
+#include
+std::pair foo(int a, int b) {
+return {a+b, a-b};
+}
+std::pair mrvs = foo(5, 12);
+std::cout  10
+
+Q: Child Pseudo Class
+A: > "The :nth-child(an+b) CSS pseudo-class matches an element that has
+> an+b-1 siblings before it in the document tree, for a given positive
+> **or zero value** for n" - [MDN :nth-child][1]
+
+Q: Formatting Dates
+A: To format `Dates` we use the `format(date, format="%Y-%m-%d")` function with either the `POSIXct` (given from `as.POSIXct()`) or `POSIXlt` (given from `as.POSIXlt()`)
+d = as.Date("2016-07-21") # Current Date Time Stamp
+
+Q: Anonymous struct
+A: data := struct {
+Number int
+Text   string
+} {
+42,
+"Hello world!",
+}
+package main
+
+import (
+"fmt"
+)
+
+func main() {
+data := struct {Number int; Text string}{42, "Hello world!"} // anonymous struct
+fmt.Printf("%+v\n", data)
+}
+
+Q: Install package from local source
+A: install.packages(path_to_source, repos = NULL, type="source")
+install.packages("~/Downloads/dplyr-master.zip", repos=NULL, type="source")
+install.packages(file.choose(), repos=NULL)
+library(devtools)
+install_local("~/Downloads/dplyr-master.zip")
+
+
+
+Q: Color Keywords
+A: .some-class {
+color: blue;
+
+
+Q: Accessing Documentation Offline
+A: godoc -http=:
+For a tour of Go (highly recommended for beginners in the language):
+For quick reference check from command-line, eg for fmt.Print:
+
+Q: UIImage masked with Label
+A: self.maskImage.layer.mask = self.maskLabel.layer;
+self.maskImage.layer.masksToBounds = YES;
+maskImageView.mask = maskLabel
+maskImageView.masksToBounds = true
+
+Q: Running normal commands from insert mode
+A: This allows for some useful mappings, e.g.
+inoremap
+inoremap
+inoremap  ^
+inoremap  $
+Now ctrl+a will put the cursor to the beginning of the line and ctrl+e - to the end of line. These mappings are used by default in `readline`, so might be useful for people who want consistency.
+
+Q: Gotcha: Exception in Dispose method masking other errors in Using blocks
+A: try
+{
+using (var disposable = new MyDisposable())
+{
+throw new Exception("Couldn't perform operation.");
+}
+}
+catch (Exception ex)
+{
+Console.WriteLine(ex.Message);
+}
+class MyDisposable : IDisposable
+{
+public void Dispose()
+{
+throw new Exception("Couldn't dispose successfully.");
+}
+}
+
+Q: Adding Picasso Library to your Android Project
+A: dependencies {
+compile "com.squareup.picasso:picasso:2.5.2"
+}
+
+com.squareup.picasso
+picasso
+2.5.2
+
+
+Q: Zip
+A: int[] numbers = { 3, 5, 7 };
+string[] words = { "three", "five", "seven", "ignored" };
+IEnumerable zip = numbers.Zip(words, (n, w) => n + "=" + w);
+>3=three
+>5=five
+>7=seven
+
+Q: Escaping the caret character
+A: If you need to use the `^` character in a character class (http://stackoverflow.com/documentation/regex/1757/character-classes) ), either put it somewhere other than the beginning of the class:
+[12^3]
+[\^123]
+\^
+
+Q: Adding the Doctype
+A: See http://stackoverflow.com/documentation/html/806/doctypes/16623/html-5-doctype for details on the HTML 5 Doctype.
+
+See http://stackoverflow.com/documentation/html/806/doctypes/3148/html-4-01-doctypes for details on how these types differ from each other.
+
+
+
+
+Q: Requiring multiple upper bounds ("extends A & B")
+A: public > void sortNumbers( List n ) {
+Collections.sort( n );
+}
+Since multiple inheritance is not allowed, you can use at most one class as a bound and it must be the first listed. For example, ` & Number>` is not allowed because Comparable is an interface, and not a class.
+
+Q: Forgetting to allocate one extra byte for \0
+A: char *dest = malloc(strlen(src)); /* WRONG */
+char *dest = malloc(strlen(src) + 1); /* RIGHT */
+strcpy(dest, src);
+#define MAX_INPUT_LEN 42
+char buffer[MAX_INPUT_LEN]; /* WRONG */
+char buffer[MAX_INPUT_LEN + 1]; /* RIGHT */
+
+scanf("%42s", buffer);  /* Ensure that the buffer is not overflowed */
+
+Q: Using std::array
+A: std::array bar(int a, int b) {
+return { a + b, a - b, a * b, a / b };
+}
+
+Q: Counting map elements
+A: m := map[string]int{}
+len(m) // 0
+m["foo"] = 1
+len(m) // 1
+var m map[string]int
+len(m) // 0
+
+Q: Lambda Expressions as Shorthand for Delegate Initialization
+A: public delegate int ModifyInt(int input);
+ModifyInt multiplyByTwo = x => x * 2;
+public delegate int ModifyInt(int input);
+ModifyInt multiplyByTwo = delegate(int x){
+return x * 2;
+};
+
+Q: grant access only to authenticated users
+A: // These rules grant access to a node matching the authenticated
+// user's ID from the Firebase auth token
+{
+"rules": {
+"users": {
+"$user_id": {
+".read": "$user_id === auth.uid",
+".write": "$user_id === auth.uid"
+}
+}
+}
+}
+
+Q: Committing without opening an editor
+A: git commit -m "Commit message here"
+git commit -m "Commit 'subject line' message here
+More detailed description follows here (after a blank line)."
+git commit -m "Commit summary" -m "More detailed description follows here"
+
+Q: Apply and remove stash
+A: git stash pop
+git stash pop stash@{n}
+
+Q: Switch It On
+A: Option Strict On
+- You can switch it On by default for all new Projects by selecting:
+
+Q: Opening multiple files in splits from the command line
+A: vim -o file1.txt file2.txt
+vim -O file1.txt file2.txt
+vim -o2 file1.txt file2.txt file3.txt
+
+Q: Get product by sku
+A: $sku = 'sku-goes-here';
+$product = Mage::getModel('catalog/product')->loadByAttribute('sku', $sku);
+
+Q: Return a 404 response
+A: createNotFoundException('Test record not found.');
+}
+return $this->render('::Test/test.html.twig', array('test' => $test));
+}
+
+}
+
+Q: UILabel & Parentview size According to Text in UILabel
+A: **Note :-** Make sure you have set Number of lines =0 in Label property.
+[1]: http://s000.tinyupload.com/?file_id=08348344016937742118
+
+Q: Ignore files locally without committing ignore rules
+A: # these files are only ignored on this repo
+# these rules are not shared with anyone
+# as they are personal
+gtk_tests.py
+gui/gtk/tests/*
+localhost
+pushReports.py
+server/
+
+Q: Pattern Matching with Regex
+A: val emailRegex: Regex = "(.+)@(.+)\\.(.+)".r
+"name@example.com" match {
+case emailRegex(userName, domain, topDomain) => println(s"Hi $userName from $domain")
+case _ => println(s"This is not a valid email.")
+}
+
+Q: Start the dialer
+A: Intent intent = new Intent(Intent.ACTION_DIAL);
+intent.setData(Uri.parse("tel:9988776655")); //Replace with valid phone number. Remember to add the tel: prefix, otherwise it will crash.
+startActivity(intent);
+
+Q: Using AsNoTracking
+A: var location =  dbContext.Location
+.Where(l => l.Location.ID == location_ID)
+.SingleOrDefault();
+
+return location;
+var location =  dbContext.Location.AsNoTracking()
+.Where(l => l.Location.ID == location_ID)
+.SingleOrDefault();
+
+return location;
+
+Q: Why Use It?
+A: 
+Dim d As Double = 123.4
+Dim s As Single = d 'This line does not compile with Option Strict On
+Dim obj As New Object
+obj.Foo 'This line does not compile with Option Strict On
+Dim something = Nothing. 'This line does not compile with Option Strict On
+
+Q: .next() method on iterators renamed
+A: g = (i for i in range(0, 3))
+g = (i for i in range(0, 3))
+
+Q: Creating new Controller
+A: namespace App\Controller;
+
+class PostsController extends AppController {
+public function initialize(){
+parent::initialize();
+// code that you want to run before every action
+}
+public function view($id) {
+//Your code here
+}
+}
+
+Q: Range and Repeat
+A: // Generate a collection containing the numbers 1-100 ([1, 2, 3, ..., 98, 99, 100])
+var range = Enumerable.Range(1,100);
+// Generate a collection containing "a", three times (["a","a","a"])
+var repeatedValues = Enumerable.Repeat("a", 3);
+
+Q: Create a new project from the command line
+A: dotnet new web
+dotnet restore
+dotnet run
+
+Q: See documentation with `h`
+A: def last(list)
+Returns the last element in list or nil if list is empty.
+
+Q: For loops
+A: for i in [0, 1, 2, 3, 4]:
+print(i)
+0
+1
+2
+3
+4
+for i in range(5):
+print(i)
+
+
+Q: Create a new Rails app with your choice of database and including the RSpec Testing Tool
+A: $ rails new MyApp -T -d postgresql
+group :development, :test do
+gem 'rspec-rails',
+end
+rails generate rspec:install
+
+Q: Accumulate names in a List
+A: // Java:
+List list = people.stream().map(Person::getName).collect(Collectors.toList());
+// Kotlin:
+val list = people.map { it.name }  // toList() not needed
+
+Q: Statically Initialized Singleton
+A: public class Singleton
+{
+private readonly static Singleton instance = new Singleton();
+private Singleton() { }
+public static Singleton Instance => instance;
+}
+
+Q: Inline if/unless
+A: puts "x is less than 5" if x < 5
+
+def save_to_file(data, filename)
+raise "no filename given" if filename.empty?
+return false unless data.valid?
+File.write(filename, data)
+end
+
+Q: Hello World
+A: from flask import Flask
+app = Flask(__name__)
+
+@app.route('/')
+def hello():
+return 'Hello, World!'
+export FLASK_APP=hello.py
+flask run
+* Running on http://localhost:5000/
+if __name__ == '__main__':
+app.run()
+
+Q: Introduction
+A: class Parent extends React.Component{
+doSomething(){
+console.log("Parent component");
+}
+render() {
+return
+
+
+
+}
+}
+
+class Child extends React.Component{
+render() {
+return
+{this.props.title}
+{this.props.text}
+
+}
+}
+
+Q: What are props?
+A: Props are used to transfer data from parent to child component. Props are read only. Child component can only get the props passed from parent using **this.props.keyName**. Using props one can make his component reusable.
+
+Q: Updating Ember CLI
+A: npm uninstall -g ember-cli
+npm cache clean
+bower cache clean
+npm install -g ember-cli@2.13.2
+ember -v
+rm -rf node_modules bower_components dist tmp
+npm install --save-dev ember-cli@2.13.2
+npm install
+bower install
+ember init
+
+Q: Add beforeFilter() method in Controller
+A: First use the Event namespace before defining the class in your controller file.
+use Cake\Event\Event;
+public function beforeFilter(Event $event) {
+parent::beforeFilter($event);
+}
+public function initialize(){
+parent::initialize();
+}
+
+Q: Sorted queries
+A: RealmResults results = realm.where(SomeObject.class)
+.findAllSorted("sortField", Sort.ASCENDING);
+**`findAllSorted()`** will always return the results sorted by the field, even if it gets updated. It is recommended to use `findAllSorted()`.
+
+Q: 50 State Maps and Advanced Choropleths with Google Viz
+A: require(googleVis)
+
+G4 <- gvisGeoChart(CityPopularity, locationvar='City', colorvar='Popularity',
+options=list(region='US', height=350,
+displayMode='markers',
+colorAxis="{values:[200,400,600,800],
+colors:[\'red', \'pink\', \'orange',\'green']}")
+)
+plot(G4)
+
+Q: Using incorrect format specifier in printf
+A: long z = 'B';
+printf("%c\n", z);
+printf("%f\n",0);
+Note that your compiler usually can help you avoid cases like these, if you turn on the proper flags during compiling (`-Wformat` in `clang` and `gcc`). From the last example:
+'int' [-Wformat]
+printf("%f\n",0);
+~~    ^
+%d
+
+Q: Apply stash without removing it
+A: git stash apply
+git stash apply stash@{n}
+
+Q: Execution of a JavaScript file in MongoDB
+A: ./mongo localhost:27017/mydb myjsfile.js
+>load("myjsfile.js")
+
+Q: Initialization
+A: enum class Color(val rgb: Int) {
+RED(0xFF0000),
+GREEN(0x00FF00),
+BLUE(0x0000FF)
+}
+
+Q: Viewing line numbers
+A: :set number
+:set nonumber
+There is also a shortcut for above. `nu` is same as `number`.
+:set nonu
+
+:set nu!
+
+Q: Get product by ID
+A: $id = 1;
+$product = Mage::getModel('catalog/product')->load($id);
+if($product->getId()){
+//product was found
+}
+
+Q: Basic example
+A: x = tf.constant(1.)
+bool = tf.constant(True)
+res = tf.cond(bool, lambda: tf.add(x, 1.), lambda: tf.add(x, 10.))
+# sess.run(res) will give you 2.
+
+Q: Running debug-only code
+A: Ember has a static global method called [runInDebug][1] which can run a function meant for debugging.
+Ember.runInDebug(() => {
+// this code only runs in dev mode
+});
+
+Q: Redirecting to another page from Controller
+A: return $this->redirect([
+'controller' => 'myController',
+'action' => 'myAction'
+]);
+return $this->redirect($this->referer());
+return $this->redirect("http://stackoverflow.com/users/1793428/haresh-vidja");
+
+Q: CREATE Indexed VIEW
+A: CREATE VIEW view_EmployeeInfo
+WITH SCHEMABINDING
+AS
+SELECT EmployeeID,
+FirstName,
+LastName,
+HireDate
+FROM [dbo].Employee
+GO
+CREATE UNIQUE CLUSTERED INDEX IX_view_EmployeeInfo
+ON view_EmployeeInfo
+(
+EmployeeID ASC
+)
+
+Q: Suspending vim
+A: When in *Normal mode* (if not, press esc to get there), issue either of these commands:
+Later, when you want to return to your `vim` session, if you haven't suspended any other jobs, issuing the following will restore vim as your foreground job.
+
+Q: Basic State
+A: class ExampleComponent extends React.Component {
+constructor(props){
+super(props);
+
+// Set-up our initial state
+this.state = {
+greeting: 'Hiya Buddy!'
+};
+}
+render() {
+// We can access the greeting property through this.state
+return(
+{this.state.greeting}
+);
+}
+}
+
+Q: Inside a database migration
+A: dateTime('last_logged_in')->nullable();
+});
+}
+
+/**
+* Reverse the migrations.
+*
+* @return void
+*/
+public function down()
+{
+Schema::table('users', function (Blueprint $table) {
+$table->dropColumn('last_logged_in');
+});
+}
+}
+ALTER TABLE `users` ADD `last_logged_in` DATETIME NULL
+
+Q: Using Dapper in C#
+A: using System.Data;
+using System.Linq;
+using Dapper;
+
+class Program
+{
+static void Main()
+{
+using (IDbConnection db = new SqlConnection("Server=myServer;Trusted_Connection=true"))
+{
+db.Open();
+var result = db.Query("SELECT 'Hello World'").Single();
+Console.WriteLine(result);
+}
+}
+}
+
+Q: Specifying specific python version to use in script on Unix/Linux
+A: #!/usr/bin/python
+#!/usr/bin/env python
+chmod +x myscript.py
+
+Q: Show changes between two commits
+A: git diff 1234abc..6789def    # old   new
+git diff @~3..@    # HEAD -3   HEAD
+
+Q: Root route
+A: class ApplicationController < ActionController::Base
+def index
+render "homepage"
+
+Q: Selecting with CASE
+A: SELECT CASE WHEN Col1  50 AND Col1  50 AND Col1 <100 THEN Col1
+ELSE 'over' END
+END threshold
+FROM TableName
+
+Q: Execute queries in the database when possible, not in memory.
+A: var counties = dbContext.States.Single(s => s.Code == "tx").Counties.Count();
+
+var counties = dbContext.Counties.Count(c => c.State.Code == "tx");
+
+Q: Creating an image
+A: 
+
+
+Note: Images are not technically inserted into an HTML page, images are linked to HTML pages. The `` tag creates a holding space for the referenced image.
+
+
+Q: Where (filter)
+A: var personNames = new[]
+{
+"Foo", "Bar", "Fizz", "Buzz"
+};
+
+var namesStartingWithF = personNames.Where(p => p.StartsWith("F"));
+Console.WriteLine(string.Join(",", namesStartingWithF));
+
+Q: Open Google map with specified latitude, longitude
+A: String uri = String.format(Locale.ENGLISH, "http://maps.google.com/maps?q=loc:%f,%f", 28.43242324,77.8977673);
+Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(uri));
+startActivity(intent);
+
+Q: sys.argv[0] is the name of the file being executed
+A: # script.py
+import sys
+print(sys.argv[0])
+print(sys.argv)
+$ python script.py
+=> script.py
+=> ['script.py']
+$ python script.py fizz
+=> script.py
+=> ['script.py', 'fizz']
+$ python script.py fizz buzz
+=> script.py
+=> ['script.py', 'fizz', 'buzz']
+
+Q: Get product collection by attribute
+A: $collection = Mage::getModel('catalog/product')->getCollection();
+// Using operator
+$collection->addAttributeToFilter('status', array('eq' => 1));
+// Without operator (automatically uses 'equal' operator
+$collection->addAttributeToFilter('status', 1);
+
+Q: A complete hello world example.
+A: pip install Django
+django-admin startproject hello
+hello/
+├── hello/
+│   ├── __init__.py
+│   ├── settings.py
+│   ├── urls.py
+│   └── wsgi.py
+└── manage.py
+hello/
+├── hello/
+│   ├── __init__.py
+│   ├── settings.py
+│   ├── urls.py
+│   ├── views.py   Hello, World
+
+Q: Passing a null pointer to printf %s conversion
+A: char *foo = NULL;
+printf("%s", foo); /* undefined behavior */
+(null)
+for the code above. However, add (just) a newline to the format string and you will get a crash:
+char *foo = 0;
+printf("%s\n", foo); /* undefined behavior */
+char *foo = "";
+printf("%s\n", foo);
+
+Q: Installation or Setup
+A: [OPAM][1] is a package manager for OCaml. It builds and manages compiler versions and OCaml libraries for you easily.
+The easiest way to install OPAM on your operating system is to use a package manager for your system. e.g apt-get, yum or homebrew.
+OCaml version 4.03.0
+
+Q: Loop through MySQLi results
+A: while($row = $result->fetch_assoc()) {
+var_dump($row);
+}
+while($row = mysqli_fetch_assoc($result)) {
+var_dump($row);
+}
+while ($row = $result->fetch_assoc()) {
+echo 'Name and surname: '.$row['name'].' '.$row['surname'].'';
+echo 'Age: '.$row['age'].''; // Prints info from 'age' column
+}
+
+Q: Using Single-case Discriminated Unions as Records
+A: type Point = Point of float * float
+let point1 = Point(0.0, 3.0)
+let point2 = Point(-2.5, -4.0)
+let (Point(x1, y1)) = point1
+// val x1 : float = 0.0
+// val y1 : float = 3.0
+let distance (Point(x1,y1)) (Point(x2,y2)) =
+pown (x2-x1) 2 + pown (y2-y1) 2 |> sqrt
+// val it : float = 7.433034374
+
+Q: Determine if an existing password hash can be upgraded to a stronger algorithm
+A: update(...);
+}
+}
+?>
+
+
+Q: Create an orphan branch (i.e. branch with no parent commit)
+A: git checkout --orphan new-orphan-branch
+
+Q: Installing The Entity Framework NuGet Package
+A: Or if you are using Visual Studio 2015 you'll see something like this:
+Install-Package EntityFramework
+
+Q: Rotate
+A: 
+.rotate {
+width: 100px;
+height: 100px;
+background: teal;
+transform: rotate(45deg);
+}
+transform-origin: 100% 50%;
+
+Q: style
+A: Use the pandas library as `pd`, this can be assumed (the import does not need to be in every example)
+import pandas as pd
+- kwargs should use no spaces `f(a=1)`
+
+Q: Current Working Drafts
+A: All published ISO standards are available for sale from the ISO store ( http://www.iso.org ).
+The working drafts of the C++ standards are publicly available for free though.
+
+Q: Basic usage of the Global Command
+A: :g/Hello/d
+:g/Hello/norm dw
+The global command also supports visual mode [and ranges](http://stackoverflow.com/documentation/vim/3383/command-line-ranges#t=201607262100401453027).
+
+Q: Converting an iterator to a stream
+A: Iterator iterator = Arrays.asList("A", "B", "C").iterator();
+Spliterator spliterator = Spliterators.spliteratorUnknownSize(iterator, 0);
+Stream stream = StreamSupport.stream(spliterator, false);
+
+Q: Functions and Properties in enums
+A: enum class Color {
+RED {
+override val rgb: Int = 0xFF0000
+},
+GREEN {
+override val rgb: Int = 0x00FF00
+},
+BLUE {
+override val rgb: Int = 0x0000FF
+}
+;
+
+abstract val rgb: Int
+
+fun colorString() = "#%06X".format(0xFFFFFF and rgb)
+}
+
+Q: Matching on an Option
+A: def f(x: Option[Int]) = x match {
+case Some(i) => doSomething(i)
+case None    => doSomethingIfNone
+def g(x: Option[Int]) = x.fold(doSomethingIfNone)(doSomething)
+def h(x: Option[Int]) = x.map(doSomething).getOrElse(doSomethingIfNone)
+
+Q: Get the list of all databases on a server
+A: **Method 1:** Below query will be applicable for SQL Server 2000+ version (Contains 12 columns)
+SELECT * FROM dbo.sysdatabases
+SELECT * FROM sys.databases
+EXEC sp_MSForEachDB 'SELECT ''?'' AS DatabaseName'
+EXEC sp_helpdb
+EXEC sp_databases
+
+Q: Using a decorator to time a function
+A: import time
+def timer(func):
+def inner(*args, **kwargs):
+t1 = time.time()
+f = func(*args, **kwargs)
+t2 = time.time()
+print 'Runtime took {0} seconds'.format(t2-t1)
+return f
+return inner
+@timer
+def example_function():
+#do stuff
+
+example_function()
+
+
+Q: Constructor
+A: A class can have only one constructor, that is a method called `initialize`. The method is automatically invoked when a new instance of the class is created.
+class Customer
+def initialize(name)
+@name = name.capitalize
+end
+end
+sarah = Customer.new('sarah')
+sarah.name #=> 'Sarah'
+
+Q: Copy a Map
+A: // Create the original map
+originalMap := make(map[string]int)
+originalMap["one"] = 1
+originalMap["two"] = 2
+// Create the target map
+targetMap := make(map[string]int)
+// Copy from the original map to the target map
+for key, value := range originalMap {
+targetMap[key] = value
+}
+
+Q: No overridden methods
+A: The first time your script gets accessed, the scripting runtime looks through the script to see if some methods are defined. If they are, that information is cached and the methods are added to their respective list. These lists are then simply looped through at different times.
+
+Q: ngCloak
+A: 
+Hello {{ name }}
+
+
+Q: Basic usage getting content between buffers and clearing
+A: 
+World
+"Hello World"
+
+Q: Hello World: aurelia-cli
+A: npm install aurelia-cli -g
+au new
+
+Q: Hello, World!
+A: void main() {
+print('Hello, World!');
+}
+dart hello_world.dart
+
+Q: An empty module
+A: import { NgModule } from '@angular/core';
+export class MyModule {}
+
+Q: Basic Concept
+A: QString s1("Hello World");
+QString s2 = s1;
+s2 += " and all the other Worlds!"
+
+Q: Comments after implicit line continuation
+A: Dim number =
+From c As Char 'Comment
+In "dj58kwd92n4" 'Comment
+Where Char.IsNumber(c) 'Comment
+Select c 'Comment
+
+Q: Taking a snapshot
+A: let snapshot = view.snapshotView(afterScreenUpdates: true)
+UIView *snapshot = [view snapshotViewAfterScreenUpdates: YES];
+
+Q: Capture by reference
+A: // Declare variable 'a'
+int a = 0;
+// Declare a lambda which captures 'a' by reference
+auto set = [&a]() {
+a = 1;
+};
+set();
+assert(a == 1);
+
+Q: Registering App ID for use with Push Notifications
+A: > * A valid App ID and identifier for you app (like com.example.MyApp) which is not used before anywhere
+# Enabling the APNs access for App ID in Apple Developer Center
+
+Q: Subclasses
+A: class Animal
+def say_hello
+'Meep!'
+end
+def eat
+'Yumm!'
+end
+end
+class Dog < Animal
+def say_hello
+'Woof!'
+end
+end
+spot = Dog.new
+spot.say_hello # 'Woof!'
+spot.eat       # 'Yumm!'
+
+Q: Inline Functions
+A: inline fun sayMyName(name: String) = "Your name is $name"
+inline fun sayMyName() = "Your name is $name"
+
+fun main() {
+val name = "Foo"
+sayMyName() # => Unresolved reference: name
+}
+
+Q: Pull (push) files from (to) the device
+A: adb pull
+adb pull /sdcard/ ~/
+adb push
+adb push ~/image.jpg /sdcard/
+sudo adb -d shell "run-as com.example.name cat /data/da/com.example.name /databases/DATABASE_NAME  > /sdcard/file
+
+Q: Dog.swift
+A: import Foundation
+
+enum Breed: String {
+case bulldog  = "Bulldog"
+case doberman = "Doberman"
+case labrador = "Labrador"
+}
+
+struct Dog {
+let name:  String
+let breed: String
+let age:   Int
+}
+
+Q: Add a new column with an index
+A: rails generate migration AddEmailToUsers email:string:index
+class AddEmailToUsers < ActiveRecord::Migration[5.0]
+def change
+add_column :users, :email, :string
+add_index :users, :email
+end
+end
+
+Q: Remove an object from validation
+A: public class foo
+{
+[Required]
+public string Email { get; set; }
+[Required]
+public string Password { get; set; }
+[Required]
+public string FullName { get; set; }
+}
+ModelState.Remove("FullName");
+
+Q: Freeing memory twice
+A: int * x = malloc(sizeof(int));
+*x = 9;
+free(x);
+free(x);
+>  Otherwise, if the argument does not match a pointer earlier returned
+> by the calloc, malloc, or realloc function, or if the space has been
+
+Q: Checking if list is empty
+A: The emptiness of a list is associated to the boolean `False`, so you don't have to check `len(lst) == 0`, but just `lst` or `not lst`
+lst = []
+if not lst:
+print("list is empty")
+
+# Output: list is empty
+
+Q: Installation - Stable
+A: pip install flask
+Step by step instructions for creating a virtualenv for your project:
+mkdir project && cd project
+python3 -m venv env
+# or `virtualenv env` for Python 2
+source env/bin/activate
+pip install flask
+
+Q: Difference between __FUNCTION__ and __METHOD__
+A: `__FUNCTION__` returns only the name of the function whereas `__METHOD__` returns the name of the class along with the name of the function:
+doit(); // Outputs: doit
+$obj->doitagain();  // Outputs: trick::doitagain
+
+Q: Basic editor and code
+A: using UnityEngine;
+using System.Collections;
+
+public class BasicCode : MonoBehaviour {
+
+// Use this for initialization
+void Start () {
+Debug.Log("hello world!!");
+}
+
+// Update is called once per frame
+void Update () {
+
+}
+}
+
+Q: Array
+A: 
+#x#
+
+
+#x# | #y#
+
+for (i = 1; x LTE arrayLen(aFoo); i = i + 1) {
+writeOutput("" & aFoo[i] & "");
+for (i = 1; i " & aFoo[i] & "");
+for (x in aFoo) {
+writeOutput("" & x & "");
+> The cfscript function `cfloop` has no support for `array`.
+
+Q: Counting Occurrences Using Comprehension
+A: # Count the numbers in `range(1000)` that are even and contain the digit `9`:
+print (sum(
+1 for x in range(1000)
+if x % 2 == 0 and
+'9' in str(x)
+))
+# Out: 95
+3. Use 1 as *expression* to return a 1 for each item that meets the conditions.
+
+Q: Simple jQuery Example to Communicate with Server
+A: 
+$.ajax({
+method: "POST",
+url: "some.php",
+data: {
+name: "John",
+location: "Boston"
+},
+success: function(msg) {
+alert("Data Saved: " + msg);
+},
+error: function(e) {
+alert("Error: " + e);
+}
+});
+
+
+success: function(result) {
+// do something
+});
+
+Q: Creating a virtual environment for a different version of python
+A: Assuming `python` and `python3` are both installed, it is possible to create a virtual environment for Python 3 even if `python3` is not the default Python:
+virtualenv -p python3 foo
+virtualenv --python=python3 foo
+python3 -m venv foo
+pyvenv foo
+
+
+Q: Animate an Image
+A: class AnimatedImage extends Component {
+constructor(props){
+super(props)
+this.state = {
+logoMarginTop: new Animated.Value(200)
+}
+}
+componentDidMount(){
+Animated.timing(
+this.state.logoMarginTop,
+{ toValue: 100 }
+).start()
+}
+render () {
+return (
+
+
+
+)
+}
+}
+
+Q: No-tracking queries
+A: using (var context = new BookContext())
+{
+var books = context.Books.AsNoTracking().ToList();
+}
+using (var context = new BookContext())
+{
+context.ChangeTracker.QueryTrackingBehavior = QueryTrackingBehavior.NoTracking;
+
+var books = context.Books.ToList();
+}
+
+Q: Shallow Clone
+A: git clone [repo_url] --depth 50
+Later, if required, you can the fetch the rest of the repository:
+git fetch --unshallow     # equivalent of git fetch -–depth=2147483647
+# fetches the rest of the repository
+git fetch --depth=1000    # fetch the last 1000 commits
+
+Q: MERGE to Insert / Update / Delete
+A: MERGE INTO targetTable
+USING sourceTable
+ON (targetTable.PKID = sourceTable.PKID)
+WHEN MATCHED AND (targetTable.PKID > 100) THEN
+DELETE
+WHEN MATCHED AND (targetTable.PKID  100)` - additional condition(s) that must be satisfied in order for the action to be taken
+
+Q: Accessing overridden default methods from implementing class
+A: public interface Fooable {
+default int foo() {return 3;}
+}
+
+public class A extends Object implements Fooable {
+@Override
+public int foo() {
+//return super.foo() + 1; //error: no method foo() in java.lang.Object
+return Fooable.super.foo() + 1; //okay, returns 4
+}
+}
+
+Q: Get SQL for Django queryset
+A: The `query` attribute on queryset gives you SQL equivalent syntax for your query.
+>>> queryset = MyModel.objects.all()
+>>> print(queryset.query)
+SELECT "myapp_mymodel"."id", ... FROM "myapp_mymodel"
+> This output should only be used for debugging purposes. The generated
+
+Q: Enum as a bounded type parameter
+A: When writing a class with generics in java, it is possible to ensure that the type parameter is an enum. Since all enums extend the `Enum` class, the following syntax may be used.
+public class Holder> {
+public final T value;
+
+public Holder(T init) {
+this.value = init;
+}
+}
+
+Q: Iteration
+A: # naive partial implementation of the Python 2.x xrange()
+def xrange(n):
+i = 0
+while i < n:
+yield i
+i += 1
+# looping
+for i in xrange(10):
+print(i)  # prints the values 0, 1, ..., 9
+# unpacking
+a, b, c = xrange(3)  # 0, 1, 2
+# building a list
+l = list(xrange(10))  # [0, 1, ..., 9]
+
+Q: Templating in Function Based Views
+A: from django.shortcuts import render
+def view(request):
+return render(request, "template.html")
+from django.shortcuts import render
+def view(request):
+context = {"var1": True, "var2": "foo"}
+return render(request, "template.html", context=context)
+
+{% if var1 %}
+{{ var2 }}
+{% endif %}
+
+
+Q: Installation or Setup
+A: npm install three
+
+
+Q: Basic SOQL Query
+A: SELECT Id, Name FROM Account
+
+Q: Updating Ember
+A: bower install ember#2.13.2 --save
+
+Q: Simple enum
+A: enum class Color {
+RED, GREEN, BLUE
+}
+
+Q: Delete a pattern from the beginning of a string
+A: $ a='I am a string'
+$ echo "${a#*a}"
+m a string
+$ echo "${a##*a}"
+string
+
+Q: Using Eloquent
+A: setConnection('mysql2');
+
+$something = $someModel->find(1);
+
+return $something;
+}
+}
+
+Q: Gradle Installation
+A: Requirements: Installed Java JDK or JRE (version 7 or higher for Gradle 3.x version)
+
+Q: Extracting values of a given type from an Array with flatMap(_:)
+A: let things: [Any] = [1, "Hello", 2, true, false, "World", 3]
+let numbers = things.flatMap { $0 as? Int }
+[1, 2, 3]
+
+Q: DELETE All Rows
+A: DELETE
+FROM Helloworlds
+TRUNCATE TABLE HelloWords
+1. Cannot TRUNCATE a table if there is a `FOREIGN KEY` reference
+
+Q: Hello World
+A: CREATE OR REPLACE PROCEDURE helloworld
+AS
+BEGIN
+dbms_output.put_line('Hello World!');
+END;
+/
+SELECT 'Hello World!' from dual;
+
+Q: Basic Import
+A: import numpy as np
+Most examples will use `np` as shorthand for numpy. Assume "np" means "numpy" in code examples.
+x = np.array([1,2,3,4])
+
+Q: Checking whether an item is in a list
+A: lst = ['test', 'twest', 'tweast', 'treast']
+'test' in lst
+# Out: True
+
+'toast' in lst
+# Out: False
+slst = set(lst)
+'test' in slst
+# Out: True
+
+Q: Platform independent new line separator
+A: System.getProperty("line.separator")
+System.lineSeparator()
+System.out.println(String.format('line 1: %s.%nline 2: %s%n', lines[0],lines[1]));
+
+Q: Using *args when writing functions
+A: def print_args(farg, *args):
+print("formal arg: %s" % farg)
+for arg in args:
+print("another positional arg: %s" % arg)
+print_args(1, "two", 3)
+
+Q: Trigonometry
+A: 
+Math.sin(r);
+Math.asin(r);
+Math.asinh(r)
+
+Math.cos(r);
+Math.acos(r);
+Math.acosh(r);
+
+Math.tan(r);
+Math.atan(r);
+Math.atanh(r);
+Math.atan2(x, y);
+
+Q: Gem installation from github/filesystem
+A: gem install --local path_to_gem/filename.gem
+mkdir newgem
+cd newgem
+git clone https://urltogem.git
+gem build GEMNAME.gemspec
+gem install gemname-version.gem
+
+Q: The Yield Keyword
+A: function gen_one_to_three() {
+for ($i = 1; $i  $i;
+}
+}
+
+foreach (gen_one_to_three() as $key => $value) {
+echo "$key: $value\n";
+}
+first: 1
+second: 2
+third: 3
+
+Q: char
+A: 1) `char c = 'c';`
+2) `char c = '\u0063'; //Unicode`
+3) `char c = '\x0063'; //Hex`
+4) `char c = (char)99;//Integral`
+ushort u = c;
+ushort u = 99;
+char c = (char)u;
+
+Q: Reading an image from a file
+A: import java.awt.Image;
+import javax.imageio.ImageIO;
+...
+try {
+Image img = ImageIO.read(new File("~/Desktop/cat.png"));
+} catch (IOException e) {
+e.printStackTrace();
+}
+
+Q: Setting up your first polymer app from a Template
+A: npm install -g bower
+The Polymer CLI provides you with all tools needed for Polymer Projects:
+npm install -g polymer-cli
+polymer init app-drawer-template
+polymer serve --open
+
+Q: CSS Classes
+A: Angular also provides some CSS classes for forms and inputs depending on their state
+input.ng-invalid {
+background-color: crimson;
+}
+input.ng-valid {
+background-color: green;
+}
+
+Q: Quick Preview
+A: Using this feature allows a user to quickly see the contents of a method/class without navigating into the class itself
+Verifying if you've selected the right class in `Search`:
+
+Q: Using __FUNCTION __
+A: NSLog(@"%s %@",__FUNCTION__, @"etc etc");
+Inserts the class and method name into the output:
+2016-07-22 12:51:30.099 loggingExample[18132:2971471] -[ViewController viewDidLoad] etc etc
+
+Q: Debug.Print
+A: Private Sub ListErrCodes()
+Debug.Print "List Error Code Descriptions"
+For i = 0 To 65535
+e = Error(i)
+If e <> "Application-defined or object-defined error" Then Debug.Print i & ": " & e
+Next i
+End Sub
+
+Q: Select columns which are named after reserved keywords
+A: SELECT
+"ORDER",
+ID
+FROM ORDERS
+Some DBMSes have proprietary ways of quoting names. For example, SQL Server uses square brackets for this purpose:
+SELECT
+[Order],
+ID
+FROM ORDERS
+SELECT
+`Order`,
+id
+FROM orders
+
+Q: Referencing a class
+A: To obtain a reference to a [`KClass`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.reflect/-k-class/index.html) object representing some class use double colons:
+val c1 = String::class
+val c2 = MyClass::class
+
+Q: Error code 1064: Syntax error
+A: select LastName, FirstName,
+from Person
+>Error Code: 1064. You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'from Person' at line 2.
+
+Q: Searched CASE in SELECT (Matches a boolean expression)
+A: (This differs from the simple case, which can only check for equivalency with an input.)
+SELECT Id, ItemId, Price,
+CASE WHEN Price < 10 THEN 'CHEAP'
+WHEN Price < 20 THEN 'AFFORDABLE'
+ELSE 'EXPENSIVE'
+END AS PriceRating
+FROM ItemSales
+
+Q: Accessing the Plaintext Password
+A: $credential = Get-Credential
+$plainPass = $credential.GetNetworkCredential().Password
+$bstr = [System.Runtime.InteropServices.Marshal]::SecureStringToBSTR($secStr)
+$plainPass = [System.Runtime.InteropServices.Marshal]::PtrToStringAuto($bstr)
+
+Q: Adding a semicolon to a #define
+A: It is easy to get confused in the C preprocessor, and treat it as part of C itself, but that is a mistake because the preprocessor is just a text substitution mechanism. For example, if you write
+/* WRONG */
+#define MAX 100;
+int arr[MAX];
+int arr[100;];
+
+Q: Hello World
+A: import QtQuick 2.3
+import QtQuick.Window 2.0
+
+Window {
+visible: true
+width: 640
+height: 480
+title: qsTr("Hello World") //The method qsTr() is used for translations from one language to other.
+
+Text {
+text: qsTr("Hello World")
+anchors.centerIn: parent
+}
+}
+
+Q: Creating a Seeder
+A: 'A New Hope',
+'year' => '1977'
+]);
+App\Movie::create([
+'name' => 'The Empire Strikes Back',
+'year' => '1980'
+]);
+}
+}
+You may also specify to run a specific seeder class to run individually using the `--class` option.
+$ php artisan db:seed --class=UserSeeder
+
+Q: Java / Lombok
+A: import lombok.Builder;
+@Builder
+public class Email {
+private String to;
+private String from;
+private String subject;
+private String body;
+}
+Email.builder().to("email1@email.com")
+.from("email2@email.com")
+.subject("Email subject")
+.body("Email content")
+.build();
+
+Q: Cumulative Sum
+A: SELECT item_id, sale_Date
+SUM(quantity * price) OVER(PARTITION BY item_id ORDER BY sale_Date ROWS BETWEEN UNBOUNDED PRECEDING) AS SalesTotal
+FROM SalesTable
+[1]: http://stackoverflow.com/documentation/sql/280/example-database/1016/cars-table#t=201604051713005624555
+
+Q: C++11
+A: ===================
+- [Range-for statement](http://stackoverflow.com/documentation/c%2b%2b/589/loops/1926/range-based-for#t=201612030856396632579)
+- =default and =delete
+- In-class member initializers
+- What is the value of __cplusplus for C++11?
+==================
+
+Q: Setting the timezone
+A: TIME_ZONE = 'UTC'  # use this, whenever possible
+TIME_ZONE = 'Europe/Berlin'
+TIME_ZONE = 'Etc/GMT+1'
+USE_TZ = False
+Django best practices call for using `UTC` for storing information in the database:
+> Even if your website is available in only one time zone, it’s still
+
+Q: Modifiers
+A: class ExampleClass {
+// Access modifiers first (don't do for instance "static public")
+public static void main(String[] args) {
+System.out.println("Hello World");
+}
+}
+interface ExampleInterface {
+// Avoid 'public' and 'abstract' since they are implicit
+void sayHello();
+}
+
+Q: Iterating the keys of a map
+A: people := map[string]int{
+"john": 30,
+"jane": 29,
+"mark": 11,
+}
+for key, _ := range people {
+fmt.Println("Name:", key)
+}
+If you are just looking for the keys, since they are the first value, you can simply drop the underscore:
+for key := range people {
+fmt.Println("Name:", key)
+}
+
+Q: Use existing or create new
+A: A common usage scenario that this feature really helps with is when you are looking for an object in a collection and need to create a new one if it does not already exist.
+IEnumerable myList = GetMyList();
+var item = myList.SingleOrDefault(x => x.Id == 2) ?? new MyClass { Id = 2 };
+
+Q: Conditional loop
+A: The `for` keyword is also used for conditional loops, traditionally `while` loops in other programming languages.
+package main
+
+import (
+"fmt"
+)
+
+func main() {
+i := 0
+for i < 3 { // Will repeat if condition is true
+i++
+fmt.Println(i)
+}
+}
+1
+2
+3
+for {
+// This will run until a return or break.
+}
+
+Q: PHP Tags
+A: 
+url) ?>">
+label) ?>
+
+
+
+
+Q: make custom reusable UIView using XIB
+A: 2. Create class .h and .m
+
+Q: Template scoped subscriptions
+A: const templateInstance = this;
+
+Q: Updating Ember Data
+A: ember install ember-data@2.13.1
+
+Q: Installation or Setup
+A: npm install chart.js --save
+
+
+
+
+
+
+
+
+
+
+
+Q: Reversing an object
+A: s = 'reverse me!'
+s[::-1]    # '!em esrever'
+
+Q: My First Method
+A: def hello_world
+ruby my_first_method.rb
+Hello world!
+
+Q: Installation - Latest
+A: pip install https://github.com/pallets/flask/tarball/master
+
+Q: Move your work in progress to another branch
+A: git stash
+git checkout correct-branch
+git stash pop
+git stash apply
+
+Q: Repeat-while loop
+A: var i: Int = 0
+repeat {
+print(i)
+i += 1
+} while i < 3
+// 0
+// 1
+// 2
+
+Q: LTrim
+A: SELECT LTRIM('    This is my string') -- Returns 'This is my string'
+
+Q: RTrim
+A: SELECT RTRIM('This is my string     ') -- Returns 'This is my string'
+
+Q: Using expression in string literals
+A: def f(x: String) = x + x
+val a = "A"
+s"$f(a)"  // compile-time error (missing argument list for method f)
+
+Q: Modules
+A: def hi():
+print("Hello world!")
+import module
+module.hi()
+>>> from module import hi
+>>> hi()
+# Hello world!
+
+Q: Inter-operating with Java reflection
+A: val stringKClass: KClass = String::class
+val c1: Class = stringKClass.java
+val c2: Class = MyClass::class.java
+
+Q: Validating numericality of an attribute
+A: class Player  By default, numericality doesn't allow nil values. You can use allow_nil: true option to permit it.
+
+Q: INSERT from SELECT Query Results
+A: INSERT INTO Table_name (FirstName, LastName, Position)
+SELECT FirstName, LastName, 'student' FROM Another_table_name
+
+Q: Hello World
+A: 
+
+{{message}}
+
+
+Polymer({
+is: 'x-foo',
+properties : {
+message: {
+type: String,
+value: "Hello world!"
+}
+}
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+Q: Column selection of a group
+A: In [11]: df = pd.DataFrame([[1, 1, 2], [1, 2, 3], [2, 3, 4]], columns=["A", "B", "C"])
+In [13]: g = df.groupby("A")
+B    C
+
+Q: Detaching from a container
+A: While attached to a running container with a pty assigned (`docker run -it ...`), you can press ControlP - ControlQ to detach.
+
+Q: history.pushState()
+A: history.pushState(state object, title, url)
+window.history.pushState("http://example.ca", "Sample Title", "/example/path.html");
+
+Q: Comparing branches
+A: git diff original new     # equivalent to original..new
+git diff original...new     # equivalent to $(git merge-base original new)..new
+
+Q: MultiParamTypeClasses
+A: {-# LANGUAGE MultiParamTypeClasses #-}
+class Convertable a b where
+convert :: a -> b
+instance Convertable Int Float where
+convert i = fromIntegral i
+
+Q: SELECT with Alias (AS)
+A: SELECT username AS val FROM stack;
+SELECT username val FROM stack;
++-------+
+| val   |
++-------+
+| admin |
+| stack |
++-------+
+2 rows in set (0.00 sec)
+
+Q: rgb() Notation
+A: .some-class {
+/* Scalar RGB, equivalent to 'blue'*/
+color: rgb(0, 0, 255);
+}
+
+.also-blue {
+/* Percentile RGB values*/
+color: rgb(0%, 0%, 100%);
+}
+rgb(, , )
+
+Q: Image Module
+A: You're going to have to import `Image` from the `react-native` package like so then use it:
+import { Image } from 'react';
+
+
+import { Image } from 'react';
+
+
+
+Q: CASE in a clause ORDER BY
+A: SELECT * FROM DEPT
+ORDER BY
+CASE DEPARTMENT
+WHEN 'MARKETING' THEN  1
+WHEN 'SALES' THEN 2
+WHEN 'RESEARCH' THEN 3
+WHEN 'INNOVATION' THEN 4
+ELSE        5
+END,
+CITY
+
+Q: Stop
+A: Sub Test()
+Dim TestVar as String
+TestVar = "Hello World"
+Stop                    'Sub will be executed to this point and then wait for the user
+MsgBox TestVar
+End Sub
+
+Q: Hello World
+A: import Html
+
+main = Html.text "Hello World!"
+[1]: http://stackoverflow.com/documentation/elm/1011/introduction-to-elm/7220/project-initialization#t=201607221410289951107
+
+Q: Currying a function with a single parameter group
+A: def minus(left: Int, right: Int) = left - right
+val numberMinus5 = minus(_: Int, 5)
+val fiveMinusNumber = minus(5, _: Int)
+numberMinus5(7)    //  2
+fiveMinusNumber(7) // -2
+
+Q: Capture functions
+A: Enum.map(list, fn(x) -> String.capitalize(x) end)
+Enum.map(list, &String.capitalize(&1))
+defmodule Bob do
+def say(message, f \\ &String.capitalize/1) do
+f.(message)
+end
+end
+
+Q: Implementing "with" using instance evaluation
+A: def with(object, &block)
+object.instance_eval &block
+end
+hash = Hash.new
+with hash do
+store :key, :value
+has_key? :key       # => true
+values              # => [:value]
+end
+
+Q: Hello World
+A: set serveroutput on
+DECLARE
+message constant varchar2(32767):= 'Hello, World!';
+BEGIN
+dbms_output.put_line(message);
+END;
+/
+Hello, World!
+
+PL/SQL procedure successfully completed.
+
+Q: Downloading a file using the Dropbox Python library
+A: import dropbox
+dbx = dropbox.Dropbox("")
+
+with open("Prime_Numbers.txt", "wb") as f:
+metadata, res = dbx.files_download(path="/Homework/math/Prime_Numbers.txt")
+f.write(res.content)
+
+Q: Select rows that match a condition
+A: SELECT
+FROM
+WHERE
+SELECT FirstName, Age
+FROM Users
+WHERE LastName = 'Smith'
+SELECT FirstName, Age
+FROM Users
+WHERE LastName = 'Smith' AND (City = 'New York' OR City = 'Los Angeles')
+
+Q: Creating a JSONField
+A: from django.contrib.postgres.fields import JSONField
+from django.db import models
+
+class IceCream(models.Model):
+metadata = JSONField()
+You can add the normal `**options` if you wish.
+
+Q: Disable Validation Error Message On Focus / Key Up
+A: By default error message appears below `textbox` in `` on *keyUp* or *after pressing submit button* if any validation constraints aren't met.
+'register-form','validateOnBlur' => false]); ?>
+
+Q: Install Packages
+A: $ pip install SomePackage
+$ pip install SomePackage==1.0.4
+To specify a minimum version to install for a package:
+$ pip install SomePackage>=1.0.4
+$ pip install -r requirements.txt
+$ pip freeze
+
+Q: Single character match
+A: The `_` (underscore) character can be used as a wildcard for any single character in a pattern match.
+SELECT * FROM Employees WHERE FName LIKE 'j_n'
+SELECT * FROM Employees WHERE FName LIKE '_A_T'
+
+Q: For Each...Next loop for looping through collection of items
+A: For Each row As DataRow In DataTable1.Rows
+'Each time this loops, row will be the next item out of Rows
+'Here we print the first column's value from the row variable.
+Debug.Print(Row.Item(0))
+Next
+
+Q: Setting up a basic development environment
+A: mkdir /usr/local/src/php-7.0/
+cd /usr/local/src/php-7.0/
+git clone -b PHP-7.0 https://github.com/php/php-src .
+git checkout -b my_private_branch
+./buildconf
+./configure
+make
+make test
+make install
+
+Q: Getting JSON data
+A: fetch("https://api.stackexchange.com/2.2/questions/featured?order=desc&sort=activity&site=stackoverflow")
+.then(resp => resp.json())
+.then(json => console.log(json))
+.catch(err => console.log(err));
+
+Q: Define polymorphic classes
+A: class Shape {
+public:
+virtual ~Shape() = default;
+virtual double get_surface() const = 0;
+virtual void describe_object() const { std::cout describe_object();
+std::cout get_surface() << std::endl;
+}
+
+
+Q: Creating Expression Trees by Using the API
+A: using System.Linq.Expressions;
+
+// Manually build the expression tree for
+// the lambda expression num => num > lambda1 =
+Expression.Lambda>(
+numLessThanFive,
+new ParameterExpression[] { numParam });
+
+Q: Modifying a const variable using a pointer
+A: int main (void)
+{
+const int foo_readonly = 10;
+int *foo_ptr;
+foo_ptr = (int *)&foo_readonly; /* (1) This casts away the const qualifier */
+*foo_ptr = 20; /* This is undefined behavior */
+
+return 0;
+}
+
+Q: belongs_to
+A: For example, if your application includes users and posts, and each post can be assigned to exactly one user, you'd declare the post model this way:
+class Post < ApplicationRecord
+belongs_to :user
+end
+
+Q: The next() function
+A: def nums():
+yield 1
+yield 2
+yield 3
+generator = nums()
+next(generator, None)  # 1
+next(generator, None)  # 2
+next(generator, None)  # 3
+next(generator, None)  # None
+next(generator, None)  # None
+# ...
+
+Q: Aliases
+A: alias -g G=' | grep -i'
+cat haystack.txt G "needle"
+alias -s c="emacs"
+alias -s php="vim"
+alias -s java="$EDITOR"
+Now in your shell, if you have a php file, `file.php`, and you run the command
+file.php
+
+Q: Iterate files (recursively)
+A: import os
+for root, folders, files in os.walk(root_dir):
+for filename in files:
+print root, filename
+for entry in os.scandir(path):
+if not entry.name.startswith('.') and entry.is_file():
+print(entry.name)
+
+Q: Lazily flattening a multidimensional Array with flatten()
+A: // A 2D array of type [[Int]]
+let array2D = [[1, 3], [4], [6, 8, 10], [11]]
+
+// A FlattenBidirectionalCollection
+let lazilyFlattenedArray = array2D.flatten()
+print(lazilyFlattenedArray.contains(4)) // true
+
+Q: Autoreload on source code changes using nodemon
+A: You can also add your nodemon startup as an npm script, which might be useful if you want to supply parameters and not type them out every time.
+"scripts": {
+"start": "nodemon entry.js -devmode -something 1"
+}
+
+
+Q: Ignoring only part of a file [stub]
+A: struct settings s;
+s.host = "localhost";
+s.port = 5653;
+s.auth = 1;
+s.port = 15653; // NOCOMMIT
+s.debug = 1; // NOCOMMIT
+s.auth = 0; // NOCOMMIT
+[filter "nocommit"]
+clean=grep -v NOCOMMIT
+file1.c filter=nocommit
+
+Q: Adding joda date-time from other time types
+A: (require '[clj-time.coerce :as c])
+
+(def string-time "1990-01-29")
+(def epoch-time 633571200)
+(def long-time 633551400)
+
+(c/from-string string-time) ;; #
+(c/from-epoch epoch-time) ;; #
+(c/from-long 633551400) ;; #
+
+Q: Getting nth element from the list
+A: get : Int -> List a -> Maybe a
+get nth list =
+list
+|> List.drop (nth - 1)
+|> List.head
+fifth : Maybe Int
+fifth = get 5 [1..10]
+--    = Just 5
+nonexistent : Maybe Int
+nonexistent = get 5 [1..3]
+--          = Nothing
+
+Q: RandomForestClassifier
+A: from sklearn.ensemble import RandomForestClassifier
+train = [[1,2,3],[2,5,1],[2,1,7]]
+target = [0,1,0]
+rf = RandomForestClassifier(n_estimators=100)
+rf.fit(train, target)
+test = [2,2,3]
+predicted = rf.predict(test)
+
+Q: Composer Available Commands
+A: |  help  |          Displays help for a command
+|  install |         Installs the project dependencies from the composer.lock file if present, or falls back on the composer.json.
+|  search       |   Search for packages
+
+Q: Lazy extension property workaround
+A: class KColor(val value: Int)
+private val colorCache = mutableMapOf()
+val KColor.color: Color
+get() = colorCache.getOrPut(this) { Color(value, true) }
+[4]: https://youtrack.jetbrains.com/issue/KT-13053#comment=27-1510399
+
+Q: [Column] attribute
+A: public class Person
+{
+public int PersonID { get; set; }
+
+[Column("NameOfPerson")]
+public string PersonName { get; set; }
+}
+[Column("NameOfPerson", TypeName = "varchar", Order = 1)]
+public string PersonName { get; set; }
+
+Q: Eager evaluation
+A: IEnumerable myMethod()
+{
+for(int i=0; i <= 8675309; i++)
+{
+yield return i;
+}
+}
+...
+// define the iterator
+var it = myMethod.Take(3);
+// force its immediate evaluation
+// list will contain 0, 1, 2
+var list = it.ToList();
+
+Q: Undoing changes
+A: git checkout -- file.txt
+git checkout -- .
+To only undo parts of the changes use `--patch`. You will be asked, for each change, if it should be undone or not.
+git checkout --patch -- dir
+git reset --hard
+git reset HEAD~2
+
+Q: Named Capture Groups
+A: (?['"])\w+\k{quote}
+
+(['"])\w+\1
+127.0.0.1 - frank [10/Oct/2000:13:55:36 -0700] "GET /apache_pb.gif HTTP/1.0" 200 2326
+(?\S+) (?\S+) (?\S+) (?\[[^]]+\]) (?"[^"]+") (?\S+) (?\S+)
+
+- `(?P=name)`
+(?J)(?...)(?...)
+(?|(?...)|(?...))
+
+Q: Installation or Setup
+A: npm install angular-material --save
+bower install angular-material --save
+jspm install angular-material
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/**
+* You must include the dependency on 'ngMaterial'
+*/
+angular.module('BlankApp', ['ngMaterial']);
+
+
+
+
+
+Q: Creating Collections
+A: $fruits = collect(['oranges', 'peaches', 'pears']);
+If you don't want to use helper functions, you can create a new Collection using the class directly:
+$fruits = new Illuminate\Support\Collection(['oranges', 'peaches', 'pears']);
+
+Q: Return list from subroutine
+A: sub foo {
+my @list1 =  ( 1, 2, 3 );
+my @list2 =  ( 4, 5 );
+
+return    ( @list1, @list2 );
+}
+
+my @list =  foo();
+print @list;          # 12345
+print scalar foo();  # 2
+return    ( \@list1, \@list2 );
+my ($list1, $list2) = foo(...);
+
+Q: Converting a Stream of Optional to a Stream of Values
+A: Optional op1 = Optional.empty();
+Optional op2 = Optional.of("Hello World");
+List result = Stream.of(op1, op2)
+.filter(Optional::isPresent)
+.map(Optional::get)
+.collect(Collectors.toList());
+System.out.println(result); //[Hello World]
+
+Q: When f1 and f2 return multiple tensors
+A: x = tf.constant(1.)
+bool = tf.constant(True)
+def fn1():
+return tf.add(x, 1.), x
+def fn2():
+return tf.add(x, 10.), x
+
+res1, res2 = tf.cond(bool, fn1, fn2)
+# tf.cond returns a list of two tensors
+# sess.run([res1, res2]) will return [2., 1.]
+
+Q: Destructuring a vector
+A: (def my-vec [1 2 3])
+Then, for example within a `let` block, you can extract values from the vector very succinctly as follows:
+(let [[x y] my-vec]
+(println "first element:" x ", second element: " y))
+;; first element: 1 , second element: 2
+
+Q: Reversing a string
+A: >>> reversed('hello')
+
+>>> [char for char in reversed('hello')]
+['o', 'l', 'l', 'e', 'h']
+>>> ''.join(reversed('hello'))
+'olleh'
+
+>>> def reversed_string(main_string):
+...     return main_string[::-1]
+...
+>>> reversed_string('hello')
+'olleh'
+
+Q: Simple text input widget
+A: The most simple example of widget is custom text input. For instance, to create an ``, you have to subclass `TextInput` and set `input_type` to `'tel'`.
+from django.forms.widgets import TextInput
+class PhoneInput(TextInput):
+input_type = 'tel'
+
+Q: Creating a Set
+A: You can push items into a set and iterate them similar to a plain JavaScript array, but unlike array, you cannot add a value to a Set if the value already exist in it.
+const mySet = new Set();
+const arr = [1,2,3,4,4,5];
+const mySet = new Set(arr);
+
+Q: Operator Precedence
+A: 1 + 2 * 3
+| Relational           |  = `instanceof`            | 9   | Left to right |
+| Equality             | == !=                             | 8   | Left to right |
+| AssignmentLambda1 | = *= /= %= += -= >= >>>= &= ^= \|=-> | 1 | Right to left |
+
+Q: Lambdas and memory utilization
+A: public static void main(String[] args) throws Exception {
+for (int i = 0; i  j);
+}
+}
+1 - For instance, Java 9 introduces an optional "link" phase to the Java build sequence which will provide the opportunity for doing global optimizations like this.
+
+Q: Installation or Setup
+A: bower install https://npmcdn.com/redux@latest/dist/redux.min.js
+
+
+
+
+
+
+
+// Redux is available as `window.Redux` variable.
+
+
+
+npm install redux --save
+var redux = require('redux');
+Or if you are using es6 transpiler, like [babel][5]:
+import redux from 'redux';
+
+Q: Populate a template from a method call
+A: {{name}}{{age}}
+this.results = new ReactiveVar();
+Meteor.call('myMethod', (error, result) => {
+if (error) {
+// do something with the error
+} else {
+// results is an array of {name, age} objects
+this.results.set(result);
+}
+return Template.instance().results.get();
+
+Q: Built-In Directives Cheat Sheet
+A: `ng-class`    Sets the css class dynamically.
+`ng-controller`   Attaches a controller class to the view.
+`ng-options`    Used to dynamically generate a list of  elements for the  element.
+`ng-open`    Used to set the open attribute on the element, if the expression
+
+Q: Merge Using CTE Source
+A: WITH SourceTableCTE AS
+(
+SELECT * FROM SourceTable
+)
+MERGE
+TargetTable AS target
+USING SourceTableCTE AS source
+ON (target.PKID = source.PKID)
+WHEN MATCHED THEN
+UPDATE SET target.ColumnA = source.ColumnA
+WHEN NOT MATCHED THEN
+INSERT (ColumnA) VALUES (Source.ColumnA);
+
+Q: A simple indexer
+A: class Foo
+{
+private string[] cities = new[] { "Paris", "London", "Berlin" };
+public string this[int index]
+{
+get {
+return cities[index];
+}
+set {
+cities[index] = value;
+}
+}
+}
+var foo = new Foo();
+// access a value
+string berlin = foo[2];
+// assign a value
+foo[0] = "Rome";
+
+Q: Creating Iterators Using Yield
+A: IEnumerable Fibonacci(int count)
+{
+int prev = 1;
+int curr = 1;
+
+for (int i = 0; i < count; i++)
+{
+yield return prev;
+int temp = prev + curr;
+prev = curr;
+curr = temp;
+}
+}
+void Main()
+{
+foreach (int term in Fibonacci(10))
+{
+Console.WriteLine(term);
+}
+}
+1
+1
+2
+3
+5
+8
+13
+21
+34
+55
+
+Q: Calling a function.
+A: Functions are only useful if we can call them. To call a function the following syntax is used:
+print("Hello, World!")
+local added = add(10, 50) -- 60
+local a = 10
+local b = 60
+local c = add(a, b)
+print(c)
+print"Hello, world!"
+for k, v in pairs{"Hello, world!"} do print(k, v) end
+
+Q: Command Line Injection
+A: Let's say, for example, a script allows a user to list directory contents on a web server.
+
+
+
+*(In a real-world application one would use PHP's built-in functions or objects to get path contents. This example is for a simple security demonstration.)*
+ls; rm -fr /
+
+
+
+ls '; rm -fr /'
+
+Q: Installation or Setup
+A: - Add the `bin` directory of the created directory (named `apache-maven-3.3.9` for Maven 3.3.9) to the `PATH` environment variable. (Reference to [change it on Windows](http://superuser.com/questions/284342/what-are-path-and-other-environment-variables-and-how-can-i-set-or-use-them)).
+
+Q: Self-Referential Association
+A: rails g model friendship user_id:references friend_id:integer
+class User  :friendships
+has_many :inverse_friendships, :class_name => "Friendship", :foreign_key => "friend_id"
+has_many :inverse_friends, :through => :inverse_friendships, :source => :user
+end
+class Friendship  "User"
+end
+
+Q: Installing SymPy
+A: conda install sympy
+pip install sympy
+sudo pip install sympy
+sudo dnf install python-sympy
+sudo dnf install python3-sympy
+sudo zypper install python-sympy
+sudo zypper install python3-sympy
+The packages for OpenSuse 42.2 seem rather outdated, so one of the first methods should be prefered.
+
+Q: Conversion to function pointer
+A: auto sorter = [](int lhs, int rhs) -> bool {return lhs
+Conversion to a function pointer is also possible for generic lambdas with an empty capture list. If necessary, template argument deduction will be used to select the correct specialization.
+auto sorter = [](auto lhs, auto rhs) { return lhs
+
+Q: Delegating to other Generator
+A: function* g1() {
+yield 2;
+yield 3;
+yield 4;
+}
+
+function* g2() {
+yield 1;
+yield* g1();
+yield 5;
+}
+
+var it = g2();
+
+console.log(it.next()); // 1
+console.log(it.next()); // 2
+console.log(it.next()); // 3
+console.log(it.next()); // 4
+console.log(it.next()); // 5
+console.log(it.next()); // undefined
+
+Q: Comparing two date-time
+A: (require '[clj-time.core :as t])
+(def date1 (t/date-time 2016 12 5))
+(def date2 (t/date-time 2016 12 6))
+(t/equal? date1 date2) ;; false
+(t/equal? date1 date1) ;; true
+(t/before? date1 date2) ;; true
+(t/before? date2 date1) ;; false
+(t/after? date1 date2) ;; false
+(t/after? date2 date1) ;; true
+
+Q: Calling a constructor from another constructor
+A: public class Animal
+{
+public string Name { get; set; }
+public Animal() : this("Dog")
+{
+}
+public Animal(string name)
+{
+Name = name;
+}
+}
+var dog = new Animal();      // dog.Name will be set to "Dog" by default.
+var cat = new Animal("Cat"); // cat.Name is "Cat", the empty constructor is not called.
+
+Q: Defining An Accessors
+A: first_name;
+
+Q: Currency
+A: Dim Value As Currency
+
+Q: Install via anaconda
+A: conda install pandas
+conda update pandas
+
+Q: Opacity Property
+A: 
+This is a partially transparent element
+
+
+Q: Taking screenshots
+A: [![Decoration options for screenshots][3]][3]
+
+Q: An introduction to Common Language Runtime
+A: - Support for lightweight sub-processes called AppDomains
+
+Q: Atom
+A: Install Atom for your distribution [here](https://atom.io/).
+
+Q: Get the sum of a list using pattern matching
+A: def sum(numbers) do
+do_sum(numbers, 0)
+do_sum(tail, head + acc)
+
+Q: Introduction
+A: `#include "headerA.h"` directly, even if the TU includes another
+
+Q: Classic mode vs ARM mode
+A: Get-Module -ListAvailable Azure.*
+Get-Module -ListAvailable AzureRM*
+
+Q: has_many
+A: class User  { where("posts.published IS TRUE") }, class_name: "Post"
+end
+
+Q: Valet links
+A: valet links
+
+...
+site1 -> /path/to/site/one
+site2 -> /path/to/site/two
+...
+
+Q: NamedTuple
+A: import typing
+Point = typing.NamedTuple('Point', [('x', int), ('y', int)])
+
+Q: Import a static HTML file
+A: ```
+
+```
+```
+
+
+```
+```
+var point = turf.point([42.123123, -23.83839]);
+```
+
+Q: Length of a list
+A: len(['one', 'two'])  # returns 2
+len(['one', [2, 3], 'four'])  # returns 3, not 4
+
+Q: Intrinsic modules
+A: use, intrinsic :: ISO_C_Binding
+use, non_intrinsic :: ISO_C_Binding
+use ISO_C_Binding
+
+Q: Basics
+A: Option is an abstract class with two children: `Some` and `None`.
+val countries = Map(
+
+
+Q: Get a System.Type
+A: var theString = "hello";
+var theType = theString.GetType();
+var theType = typeof(string);
+
+Q: Skew
+A: 
+.skew {
+width: 100px;
+height: 100px;
+background: teal;
+transform: skew(20deg, -30deg);
+}
+
+Q: Remove Whitespace from the Beginning and End of a String
+A: String s = new String("   Hello World!!  ");
+String t = s.trim();  // t = "Hello World!!"
+
+Q: border-collapse
+A: The `border-collapse` property determines if a tables' borders should be separated or merged.
+
+Q: Using Named Slots
+A: 
+
+Page Title
+
+
+
+
+
+
+
+
+
+
+
+This is sidebar content.
+
+
+
+
+Page Title
+
+
+
+This is sidebar content.
+
+
+
+
+
+
+
+Q: Adding Lodash To A CLI Application
+A: Now we can use Lodash by simply importing it, using the ES6 import syntax:
+`import _ from 'lodash';`
+
+Q: Scatter Plots
+A: library(ggplot2)
+ggplot(iris, aes(x = Petal.Width, y = Petal.Length, color = Species)) +
+geom_point()
+
+Q: Upgrade Packages
+A: $ pip install --upgrade SomePackage
+$ pip install --upgrade pip
+$ python -m pip install --upgrade pip
+
+Q: Denying IPs
+A: order allow,deny
+deny from 255.0.0.0
+allow from all
+order allow,deny
+deny from 123.45.6.
+allow from all
+
+Q: CREATE VIEW With Encryption
+A: CREATE VIEW view_EmployeeInfo
+WITH ENCRYPTION
+AS
+SELECT EmployeeID, FirstName, LastName, HireDate
+FROM Employee
+GO
+
+Q: Installation or Setup
+A: For example, PowerShell 6, for Ubuntu 16.04, is published to package repositories for easy installation (and updates).
+
+Q: Updating npm and packages
+A: npm install -g npm@latest
+If you want to check for updated versions you can do:
+npm outdated
+npm update
+npm update  --save
+
+Q: NppExec
+A: NPE_CONSOLE v+
+sqlcmd -S 111.111.1.1 -U UserName -P "password" -i C:\scripts\query.sql
+sel_settext $(OUTPUT)
+NPP_CONSOLE 0
+cls
+
+Q: ngCopy
+A: This paragraph cannot be copied
+$scope.blockCopy = function(event) {
+event.preventDefault();
+console.log("Copying won't work");
+}
+
+Q: history.replaceState()
+A: history.replaceState(data, title [, url ])
+window.history.replaceState("http://example.ca", "Sample Title", "/example/path.html");
+
+Q: Your first program in Swift Playgrounds app on iPad
+A: 1- Download [Swift Playgrounds][1] for iPad from App Store.
+[1]: https://itunes.apple.com/us/app/swift-playgrounds/id908519492?mt=8
+
+Q: Populating kwarg values with a dictionary
+A: def foobar(foo=None, bar=None):
+return "{}{}".format(foo, bar)
+
+values = {"foo": "foo", "bar": "bar"}
+
+foobar(**values) # "foobar"
+
+
+
+
+Q: rgba() Notation
+A: .red {
+/* Opaque red */
+color: rgba(255, 0, 0, 1);
+}
+.red-50p {
+/* Half-translucent red. */
+color: rgba(255, 0, 0, .5);
+}
+rgba(, , , );
+
+Q: Logging EmberData
+A: console.log(model.toJSON());
+model.serialize();
+
+- id is either a guId create with [Ember.guidFor][6] or, for example, the model's id.
+
+
+Q: Creating a RegExp Object
+A: var re = new RegExp(".*");
+var re = new RegExp(".*", "gmi");
+var re = new RegExp("\\w*");
+var re = /.*/;
+var re = /.*/gmi;
+var re = /\w*/;
+
+Q: Find All Non-Overlapping Matches
+A: results = re.finditer(r"([0-9]{2,3})", "some 1 text 12 is 945 here 4445588899")
+print(results)
+for result in results:
+print(result.group(0))
+
+Q: Shrink the code with ProGuard
+A: android {
+buildTypes {
+release {
+minifyEnabled true
+proguardFiles getDefaultProguardFile(‘proguard-android.txt'),
+'proguard-rules.pro'
+}
+}
+}
+
+Q: Initial Setup
+A: 1. [Create a Google Cloud project][1], if you don't have one already.
+2. [Enable billing for your project][2] to allow buckets to be created.
+
+Q: Splitting a string using regular expressions
+A: import re
+data = re.split(r'\s+', 'James 94 Samantha 417 Scarlett 74')
+print( data )
+# Output: ['James', '94', 'Samantha', '417', 'Scarlett', '74']
+
+Q: Add a new column to a table
+A: rails generate migration AddNameToUsers name
+class AddNameToUsers < ActiveRecord::Migration[5.0]
+def change
+add_column :users, :name, :string
+end
+end
+
+Q: UUID Primary key
+A: import uuid
+from django.db import models
+class ModelUsingUUID(models.Model):
+id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
+
+Q: Adding Workers
+A: julia> nprocs()
+1
+$ julia -p n
+where `n` is how many *additional* processes you want to add.  Thus, if we start Julia with
+$ julia -p 2
+julia> nprocs()
+3
+
+Q: Using .Net assemblies from Python code
+A: `from System import Math`
+from System import Math
+print Math.Abs(-123)
+import clr
+clr.AddReference('Sample') # Sample.dll inside of the working directory.
+
+Q: Using Elements from the Polymer Catalog
+A: Polymer prodives a lot of well built elements for you to use in your app.
+To import the element you've just installed, import the corresponding `.html` file:
+
+
+
+Q: Using ng-inspect chrome extension
+A: [ng-inspect][1] is a light weight Chrome extension for debugging AngularJS applications.
+Exposes few global variables for quick access of `scope/isolateScope`.
+
+Q: Simple Grouping
+A: SELECT customerId
+FROM orders
+GROUP BY customerId;
+SELECT customerId,
+COUNT(productId) as numberOfProducts,
+sum(price) as totalPrice
+FROM orders
+GROUP BY customerId;
+
+Q: Drop Table
+A: CREATE TABLE tbl(
+id INT NOT NULL AUTO_INCREMENT,
+title VARCHAR(100) NOT NULL,
+author VARCHAR(40) NOT NULL,
+submission_date DATE,
+PRIMARY KEY (id)
+);
+DROP TABLE tbl;
+
+Q: View an app's internal data (data/data/<sample.package.id>) on a device
+A: adb -s  backup -noapk
+dd if=backup.ab bs=1 skip=24 | python -c "import zlib,sys;sys.stdout.write(zlib.decompress(sys.stdin.read()))" > backup.tar
+tar -xvf backup.tar
+
+Q: String Contains
+A: Python makes it extremely intuitive to check if a string contains a given substring. Just use the `in` operator:
+>>> "foo" in "foo.baz.bar"
+True
+>>> "" in "test"
+True
+
+Q: Sourcing a file
+A: #!/bin/bash
+export A="hello_world"
+alias sayHi="echo Hi"
+sayHello() {
+echo Hello
+}
+$ source sourceme.sh
+$ echo $A
+hello_world
+$ sayHi
+Hi
+$ sayHello
+Hello
+$ . sourceme.sh
+
+Q: Remove an existing column from a table
+A: rails generate migration RemoveNameFromUsers name:string
+class RemoveNameFromUsers < ActiveRecord::Migration[5.0]
+def change
+remove_column :users, :name, :string
+end
+end
+
+Q: Language injection
+A: 6. In the new tool window enter the regex - note how it's automatically mapped to a properly escaped Java string. Similarly for JSON the indents will be placed properly.
+
+Q: Common Lisp HyperSpec
+A: Common Lisp development environments usually allow lookup of the HyperSpec documentation for Lisp symbols.
+* [SLIME][6] for GNU Emacs provides a version of [hyperspec.el][7].
+
+Q: Displaying Messages
+A: echo Some Text
+echo(ON
+echo(
+echo(off
+It is also common to use `echo.` to output a blank line, but please see the remarks for why this is not the best idea.
+<nul set/p=Some Text
+
+Q: Display a loading message
+A: If our component is not ready and waiting for data from server, then we can add loader using *ngIf.
+loading: boolean = false;
+ngOnInit() {
+this.loading = true;
+}
+this.loading=false;
+
+
+
+
+Q: true, false
+A: var myTrueBool = true;
+var myFalseBool = false;
+public static bool operator true(MyClass x)
+{
+return x.value >= 0;
+}
+public static bool operator false(MyClass x)
+{
+return x.value < 0;
+}
+
+Q: Importing an entire module
+A: In addition to importing named members from a module or a module's default export, you can also import all members into a namespace binding.
+import * as test from './test'
+test.doSomething()
+
+Q: Creating and Starting a Second Thread
+A: using System.Threading;
+
+class MainClass {
+static void Main() {
+var thread = new Thread(Secondary);
+thread.Start();
+}
+
+static void Secondary() {
+System.Console.WriteLine("Hello World!");
+}
+}
+
+Q: Array from string
+A: stringVar="Apple Orange Banana Mango"
+arrayVar=(${stringVar// / })
+Similarly, other characters can be used for the delimiter.
+stringVar="Apple+Orange+Banana+Mango"
+arrayVar=(${stringVar//+/ })
+
+Q: Recursion in plain English
+A: public int Factorial(int number)
+{
+return number == 0 ? 1 : n * Factorial(number - 1);
+}
+1. Is `number (4) == 1`?
+4. This continues until `Factorial(1)` is executed and `number (1) == 1` returns 1.
+
+Q: Interface and class documentation comments
+A: ///
+/// This interface can do Foo
+///
+public interface ICanDoFoo
+{
+// ...
+}
+///
+/// This Bar class implements ICanDoFoo interface
+///
+public class Bar : ICanDoFoo
+{
+// ...
+}
+[![class summary][2]][2]
+
+Q: Scale
+A: 
+.scale {
+width: 100px;
+height: 100px;
+background: teal;
+transform: scale(0.5, 1.3);
+}
+This example will scale the div to `100px * 0.5 = 50px` on the X axis and to `100px * 1.3 = 130px` on the Y axis.
+
+Q: External Stylesheet Use
+A: 
+
+
+You can also use stylesheets provided from websites via a content delivery network, or CDN for short. (for example, Bootstrap):
+
+
+
+Generally, you can find CDN support for a framework on its website.
+
+Q: Assign localhost ports (esp. permissions/availability issues, running multiple ember sites simultaneously)
+A: ember serve --port 0
+ember serve --port 0 --live-reload-port 0
+python -c 'import socket; s=socket.socket(); s.bind(("", 0)); print(s.getsockname()[1]); s.close()'
+ember serve --port  --live-reload-port
+
+Q: Using filter to filter your API query
+A: $.ajax({
+url: Xrm.Page.context.getClientUrl() + '/api/data/v8.0/accounts?$filter=name eq CompanyName',
+headers: {
+'Accept': 'Application/json'
+}
+}).done(function (result) {
+var accounts = result.value;
+});
+
+Q: Passing stdin to the container
+A: docker exec -i mariadb bash -c 'mariadb "-p$MARIADB_PASSWORD" ' < dump.sql
+docker exec -i container command < file.stdin
+docker exec -i container command <<EOF
+inline-document-from-host-shell-HEREDOC-syntax
+EOF
+
+Q: install and run ggplot2
+A: To install and load the current stable version of `ggplot2` for your R installation use:
+# install from CRAN
+install.packages("ggplot2")
+
+# install.packages("devtools")
+devtools::install_github("hadley/ggplot2")
+
+Q: ANSI NULLS
+A: `ANSI NULLS` being set to off allows for a `=`/`<>` comparison of null values.
+id someVal
+----
+0 NULL
+1 1
+2 2
+SELECT id
+FROM table
+WHERE someVal = NULL
+set ansi_nulls off
+SELECT id
+FROM table
+WHERE someVal = NULL
+
+Q: Swapping values
+A: var a = "Marty McFly"
+var b = "Emmett Brown"
+(a, b) = (b, a)
+print(a) // "Emmett Brown"
+print(b) // "Marty McFly"
+var a = 0
+var b = 1
+var c = 2
+var d = 3
+
+(a, b, c, d) = (d, c, b, a)
+
+print(a, b, c, d) // 3, 2, 1, 0
+
+Q: Reading all bytes to a byte[]
+A: import java.nio.file.Files;
+import java.nio.file.Paths;
+import java.nio.file.Path;
+Path path = Paths.get("path/to/file");
+
+try {
+byte[] data = Files.readAllBytes(path);
+} catch(IOException e) {
+e.printStackTrace();
+}
+
+Q: Defining a Class
+A: You define a class like this:
+class Dog {}
+A class can also be a subclass of another class:
+class Animal {}
+class Dog: Animal {}
+[1]: http://stackoverflow.com/documentation/swift/241/protocols#t=201609170104220090365
+
+Q: Installation
+A: # Install fusioncharts package
+npm install fusioncharts
+# Install fusionmaps package
+npm install fusionmaps
+
+# Install fusioncharts package
+bower install fusioncharts
+# Install fusionmaps package
+bower install fusionmaps
+
+
+Q: Changing the author of commits
+A: if [ "$GIT_AUTHOR_NAME" = "Author to Change From" ]
+then
+export GIT_AUTHOR_NAME="Author to Change To"
+export GIT_AUTHOR_EMAIL="email.to.change.to@example.com"
+fi
+chmod +x ./filter.sh
+git filter-branch --env-filter ./filter.sh
+
+Q: Changing Types in a List
+A: # Convert a list of strings to integers.
+items = ["1","2","3","4"]
+[int(item) for item in items]
+# Out: [1, 2, 3, 4]
+# Convert a list of strings to float.
+items = ["1","2","3","4"]
+map(float, items)
+# Out:[1.0, 2.0, 3.0, 4.0]
+
+Q: Map
+A: map: (a -> b) (listof a) -> (listof b)
+> (map (lambda (x) (* x 2)) (list 1 2 3 4 5)
+(list 2 4 6 8 10)
+> (map sqrt (list 1 4 9))
+(list 1 2 3)
+> (map (lambda (x) (if (even? x) "even" "odd")) (list 1 2 3))
+(list "odd" "even" "odd")
+
+Q: Composite Primary Key
+A: using System.Data.Entity;
+// ..
+
+public class PersonContext : DbContext
+{
+// ..
+protected override void OnModelCreating(DbModelBuilder modelBuilder)
+{
+// ..
+modelBuilder.Entity().HasKey(p => new { p.FirstName, p.LastName });
+}
+}
+
+Q: Using Range with various Linq methods
+A: You can use the Enumerable class alongside Linq queries to convert for loops into Linq one liners.
+var asciiCharacters = new List();
+for (var x = 0; x  (char) a);
+var evenNumbers = Enumerable.Range(1, 100).Where(a => a % 2 == 0);
+
+Q: mutable lambdas
+A: 
+int a = 0;
+auto bad_counter = [a] {
+return a++;   // error: operator() is const
+// cannot modify members
+};
+auto good_counter = [a]() mutable {
+return a++;  // OK
+}
+good_counter(); // 0
+good_counter(); // 1
+good_counter(); // 2
+
+
+Q: UNICODE modifier
+A: /\A\p{L}+\z/u
+print(re.findall(ur"(?u)\w+", u"Dąb")) # [u'D\u0105b']
+print(re.findall(r"\w+", u"Dąb"))      # [u'D', u'b']
+System.out.println("Dąb".matches("(?U)\\w+")); // true
+System.out.println("Dąb".matches("\\w+"));     // false
+
+Q: Limiting amount of results
+A: SELECT * FROM TableName FETCH FIRST 20 ROWS ONLY;
+SELECT * FROM TableName LIMIT 20;
+SELECT Id,
+Col1
+FROM (SELECT Id,
+Col1,
+row_number() over (order by Id) RowNumber
+FROM TableName)
+WHERE RowNumber <= 20
+SELECT TOP 20 *
+FROM dbo.[Sale]
+
+Q: Commits per developer
+A: git shortlog -sn        #Names and Number of commits
+git shortlog -sne       #Names along with their email ids and the Number of commits
+git log --pretty=format:%ae \
+| gawk -- '{ ++c[$0]; } END { for(cc in c) printf "%5d %s\n",c[cc],cc; }'
+
+Q: Split string in Sql Server 2008/2012/2014 using XML
+A: SELECT split.a.value('.', 'VARCHAR(100)') AS Value
+FROM   (SELECT Cast ('' + Replace('A|B|C', '|', '')+ '' AS XML) AS Data) AS A
+CROSS apply data.nodes ('/M') AS Split(a);
++-----+
+|Value|
++-----+
+|A    |
++-----+
+|B    |
++-----+
+|C    |
++-----+
+
+Q: Iterating Over a Dictionary
+A: d = {'a': 1, 'b': 2, 'c':3}
+for key in d:
+print(key, d[key])
+# c 3
+# b 2
+# a 1
+print([key for key in d])
+# ['c', 'b', 'a']
+for key, value in d.items():
+print(key, value)
+# c 3
+# b 2
+# a 1
+for key, value in d.values():
+print(key, value)
+# 3
+# 2
+# 1
+
+Q: Creating random integers
+A: # Creates a 5x5 random integer array ranging from 10 (inclusive) to 20 (inclusive)
+np.random.randint(10, 20, (5, 5))
+
+'''
+Out: array([[12, 14, 17, 16, 18],
+[18, 11, 16, 17, 17],
+[18, 11, 15, 19, 18],
+[19, 14, 13, 10, 13],
+[15, 10, 12, 13, 18]])
+'''
+
+Q: Replacing
+A: However, if you make a group ID like '10', [this doesn't work](https://docs.python.org/2/library/re.html#re.sub): `\10` is read as 'ID number 1 followed by 0'. So you have to be more specific and use the `\g` notation:
+items = ["zero", "one", "two"]
+
+Q: Referencing a function
+A: Functions are first-class citizens in Kotlin. You can obtain a reference on it using double colons and then pass it to another function:
+fun isPositive(x: Int) = x > 0
+val numbers = listOf(-2, -1, 0, 1, 2)
+println(numbers.filter(::isPositive)) // [1, 2]
+
+Q: A procedure that accepts a variable number of arguments
+A: ### Definition
+proc myproc {alpha {beta {}} {gamma green}} {
+puts [list $alpha $beta $gamma]
+}
+### Use
+myproc A
+# => A {} green
+myproc A B
+# => A B green
+myproc A B C
+# => A B C
+myproc A B C D
+# (ERROR) wrong # args: should be "myproc alpha ?beta? ?gamma?"
+
+Q: Delete
+A: // New in MongoDB 3.2
+db.people.deleteMany({name: 'Tom'})
+// All versions
+db.people.remove({name: 'Tom'})
+// New in MongoDB 3.2
+db.people.deleteOne({name: 'Tom'})
+// All versions
+db.people.remove({name: 'Tom'}, true)
+db.people.remove();
+db.people.remove({});
+
+Q: Getting Day Month Year Hour Minute Second from your date-time
+A: (require '[clj-time.core :as t])
+
+(def example-time (t/date-time 2016 12 5 4 3 27 456))
+(t/year example-time) ;; 2016
+(t/month example-time) ;; 12
+(t/day example-time) ;; 5
+(t/hour example-time) ;; 4
+(t/minute example-time) ;; 3
+(t/second example-time) ;; 27
+
+Q: SQL Query
+A: SELECT employee_name, date_of_birth, salary
+FROM   employees
+WHERE  salary > 50000
+AND date_of_birth >= DATE '2000-01-01'
+ORDER BY employee_name;
+SELECT department_id, COUNT(*)
+FROM   employees
+GROUP BY department_id
+HAVING COUNT(*) >= 5
+ORDER BY COUNT(*) DESC;
+
+Q: Class Definition of Functor and Laws
+A: class Functor f where
+fmap :: (a -> b) -> f a -> f b
+fmap id = id                    -- identity
+fmap f . fmap g = fmap (f . g)  -- composition
+There's a commonly-used infix alias for `fmap` called ``.
+infixl 4
+() :: Functor f => (a -> b) -> f a -> f b
+() = fmap
+
+Q: Implementing multiple interfaces
+A: public interface IAnimal
+{
+string Name { get; set; }
+}
+
+public interface INoiseMaker
+{
+string MakeNoise();
+}
+
+public class Cat : IAnimal, INoiseMaker
+{
+public Cat()
+{
+Name = "Cat";
+}
+
+public string Name { get; set; }
+public string MakeNoise()
+{
+return "Nyan";
+}
+}
+
+Q: Basic expressions
+A: CL-USER> (+ 1 2 3)
+6
+CL-USER> (- 3 1 1)
+1
+CL-USER> (- 3)
+-3
+CL-USER> (+ 5.3 (- 3 2) (* 2 2))
+10.3
+CL-USER> (concatenate 'string "Hello, " "World!")
+"Hello, World!"
+CL-USER>
+(+ 5 ((+ 2 4)))
+> Error: Car of ((+ 2 4)) is not a function name or lambda-expression. ...
+
+Q: Use HAVING with Aggregate Functions
+A: This example uses the [Car Table](http://stackoverflow.com/documentation/sql/280/example-database/1016/cars-table#t=201606100018373550458) from the Example Databases.
+SELECT CustomerId, COUNT(Id) AS [Number of Cars]
+FROM Cars
+GROUP BY CustomerId
+HAVING COUNT(Id) > 1
+
+Q: Getting the full contents of a file
+A: with open('myfile.txt') as in_file:
+content = in_file.read()
+
+print(content)
+
+in_file = open('myfile.txt', 'r')
+content = in_file.read()
+print(content)
+in_file.close()
+in_file = open('myfile.txt', 'r')
+raise Exception("oops")
+in_file.close()  # This will never be called
+
+Q: Highlighting
+A: Here is some content from an article that contains the searched query
+that we are looking for. Highlighting the text will make it easier for the user to
+find what they are looking for.
+[![Black text on yellow background is a common default style for the mark element][2]][2]
+
+Q: A simple service worker
+A: // we check if the browser supports ServiceWorkers
+if ('serviceWorker' in navigator) {
+.serviceWorker
+.register(
+// path to the service worker file
+'sw.js'
+)
+// the registration is async and it returns a promise
+.then(function (reg) {
+console.log('Registration Successful');
+});
+
+Q: Validate uniqueness of an attribute
+A: class Account < ApplicationRecord
+validates :email, uniqueness: true
+end
+class Holiday < ApplicationRecord
+validates :name, uniqueness: { scope: :year,
+message: "should happen once per year" }
+end
+class Person < ApplicationRecord
+validates :name, uniqueness: { case_sensitive: false }
+end
+
+Q: Starting a Build
+A: All `[arguments]` (can be several) are passed to `makeprg` just as if it had been invoked with `:!{makeprg} [arguments]`.
+The output of the invoked program is parsed for errors according to the `'errorformat'` option. If any errors are found, the quickfix window is opened to display them.
+
+Q: Accessing settings
+A: Once you've got all your settings, you'll want to use them in your code. To do so, add the following import to your file:
+from django.conf import settings
+You may then access your settings as attributes of the `settings` module, for example:
+if not settings.DEBUG:
+email_user(user, message)
+
+Q: Calculating a Message Digest
+A: import hashlib
+h = hashlib.new('sha256')
+h.update(b'Nobody expects the Spanish Inquisition.')
+h.digest()
+# ==> b'.\xdf\xda\xdaVR[\x12\x90\xff\x16\xfb\x17D\xcf\xb4\x82\xdd)\x14\xff\xbc\xb6Iy\x0c\x0eX\x9eF-='
+h.hexdigest()
+# ==> '2edfdada56525b1290ff16fb1744cfb482dd2914ffbcb649790c0e589e462d3d'
+
+Q: Basic Use
+A: let number = 3
+switch number {
+case 1:
+print("One!")
+case 2:
+print("Two!")
+case 3:
+print("Three!")
+default:
+print("Not One, Two or Three")
+}
+let string = "Dog"
+switch string {
+case "Cat", "Dog":
+print("Animal is a house pet.")
+default:
+print("Animal is not a house pet.")
+}
+Animal is a house pet.
+
+Q: Opening and reading using an ElementTree
+A: import xml.etree.ElementTree as ET
+tree = ET.parse("yourXMLfile.xml")
+root = tree.getroot()
+for child in root:
+print(child.tag, child.attrib)
+print(root[0][1].text)
+To search for specific tags by name, use the `.find` or `.findall`:
+print(root.findall("myTag"))
+print(root[0].find("myOtherTag"))
+
+
+Q: Reversing list elements
+A: In [3]: rev = reversed(numbers)
+In [4]: rev
+Out[4]: [9, 8, 7, 6, 5, 4, 3, 2, 1]
+In [1]: numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+
+In [2]: numbers[::-1]
+Out[2]: [9, 8, 7, 6, 5, 4, 3, 2, 1]
+[1]: http://stackoverflow.com/documentation/python/209/list/2035/list-support-operations#t=201607230923043603753
+
+Q: Syntax tree
+A: foreach (var syntaxTree in compilation.SyntaxTrees)
+{
+var root = await syntaxTree.GetRootAsync();
+var declaredIdentifiers = root.DescendantNodes()
+.Where(an => an is VariableDeclaratorSyntax)
+.Cast()
+.Select(vd => vd.Identifier);
+foreach (var di in declaredIdentifiers)
+{
+Console.WriteLine(di);
+}
+}
+
+Q: Adding date-time to other date-times
+A: (require '[clj-time.core :as t])
+
+(def example-date (t/date-time 2016 1 1)) ;; #
+
+;; Addition
+(t/plus example-date (t/months 1))        ;; #
+(t/plus example-date (t/years 1))         ;; #
+;; Subtraction
+(t/minus example-date (t/days 1))          ;; #
+(t/minus example-date (t/hours 12))        ;; #
+
+Q: Destructuring function arguments
+A: let user = {
+name: 'Jill',
+age: 33,
+profession: 'Pilot'
+}
+function greeting ({name, profession}) {
+console.log(`Hello, ${name} the ${profession}`)
+}
+greeting(user)
+This also works for arrays:
+let parts = ["Hello", "World!"];
+
+function greeting([first, second]) {
+console.log(`${first} ${second}`);
+}
+
+Q: MULTILINE modifier
+A: /^My Line \d+$/gm
+
+Q: Integer
+A: Dim Value As Integer
+
+Q: LongLong
+A: Dim Value As LongLong
+
+Q: Sum of a geometric series: r^0 + r^1 + r^2 + ...
+A: If r = 1, this sum is rn.
+
+Q: Debounce Your Model
+A: 
+
+Name:
+
+Clear
+
+user.name =
+
+
+Q: Padding on a given side
+A: 
+
+.myClass {
+padding-top: 5px;
+}
+
+
+
+Q: foldl/4
+A: ?- foldl(plus, [2,3,4], 0, S).
+S = 9.
+
+Q: Avoid empty unity methods
+A: void Update
+{
+}
+
+void FixedUpdate
+{
+}
+
+Q: Installation and Setup
+A: {"couchdb":"Welcome","version":"1.6.1"}
+
+Q: MAX()
+A: Select MAX(MarksObtained) From Marksheet
+
+Q: MIN()
+A: Select MIN(MarksObtained) From Marksheet
+
+Q: Token pasting
+A: #ifdef UNICODE
+#define TEXT(x) L##x
+#endif
+
+Q: Multiple return
+A: def xyz():
+return a, b
+
+t = xyz()
+a, b = xyz()
+
+Q: Pipes and subshells
+A: 
+var="before"
+echo "after" | read var
+echo $var
+
+Q: The simple Hello World program in REPL
+A: CL-USER> "Hello, World!"
+"Hello, World!"
+CL-USER>
+
+Q: C++98
+A: =====================================
+==================
+
+Q: Impl Blocks
+A: impl Type {
+fn my_function(&self) -> &'a u32 {
+self.x
+}
+}
+
+Q: Retrieving data from a file
+A: import json
+
+with open(filename, 'r') as f:
+d = json.load(f)
+
+Q: Uninstalling a package from one project in a solution
+A: PM> Uninstall-Package -ProjectName MyProjectB EntityFramework
+
+Q: maplist/[2,3]
+A: ?- maplist(dif(a), [X,Y,Z]).
+dif(X, a),
+dif(Y, a),
+dif(Z, a).
+
+Q: Finding definition files with typescript 2.x
+A: npm i -S lodash
+npm i -D @types/lodash
+import * as _ from 'lodash'
+
+Q: Installation or Setup
+A: On Windows, you can get an installer for the latest version [here][1].
+
+Q: Reflecting on type parameters
+A: class NameGetter
+{
+public string GetTypeName()
+{
+return typeof(T).Name;
+}
+}
+
+Q: Moving the last item of the block to the beginning
+A: stuff: [chair lamp table book carpet]
+head insert stuff take back tail stuff
+
+Q: Hello World
+A: import std.stdio;
+// Let's get going!
+void main()
+{
+writeln("Hello World!");
+}
+
+Q: Compare two files from the web
+A: diff <(curl http://www.example.com/page1) <(curl http://www.example.com/page2)
+
+Q: Destructuring nested vectors
+A: (def my-vec [[1 2] [3 4]])
+(let [[[a b][c d]] my-vec]
+(println a b c d))
+;; 1 2 3 4
+
+Q: Delete one line containing a pattern
+A: line 1
+line 2
+line 3
+sed '/line 2/d' file.txt
+line 1
+line 3
+sed -i '/line 2/d' file.txt
+
+Q: Using the Logcat
+A: $ adb logcat
+$ adb logcat -v time
+$ adb logcat -v time | grep 'searchtext'
+$ adb logcat *:E
+
+Q: See if Enterprise-specific features are being used
+A: SELECT * FROM sys.dm_db_persisted_sku_features
+This will list the features being used, if any.
+
+Q: Enable Scheduling
+A: @Configuration
+@EnableScheduling
+public class MyConfig {
+
+// Here it goes your configuration
+}
+
+Q: Retrieve just the extension from a file name
+A: Dim fso As New Scripting.FileSystemObject
+Debug.Print fso.GetExtensionName("MyFile.something.txt")
+
+Q: Get sample data
+A: 
+db.emplyees.aggregate({ $sample: { size:1 } })
+where `size` stands for number of items to select.
+
+Q: Set alpha
+A: "alpha" is used to specify the opacity for an image.
+android:alpha="0.5"
+imgExample.setAlpha(0.5f);
+
+Q: Creating a class
+A: You can define a new class using the `class` keyword.
+class MyClass
+end
+somevar = MyClass.new
+# => #
+
+Q: Raising Exceptions
+A: def even_the_odds(odds):
+if odds % 2 != 1:
+raise ValueError("Did not get an odd number")
+
+return odds + 1
+
+Q: Copy a single file
+A: cp /path/to/source/foo.txt /path/to/target/folder/
+cp /path/to/source/foo.txt /path/to/target/folder/bar.txt
+
+Q: Selecting with more than 1 condition.
+A: SELECT name FROM persons WHERE gender = 'M' AND age > 20;
+SELECT name FROM persons WHERE gender = 'M' OR age  20);
+
+Q: JNDI Datasource for PostgreSQL & MySQL
+A: 
+
+
+
+url="jdbc:mysql://host:3306/dbname"
+driverClassName="com.mysql.jdbc.Driver"
+validationQuery="/* ping */ SELECT 1"
+
+Q: Installing electron-packager
+A: # for use in npm scripts
+npm install electron-packager --save-dev
+# for use from cli
+npm install electron-packager -g
+
+Q: Storing data in a file
+A: import json
+
+d = {
+'foo': 'bar',
+'alice': 1,
+'wonderland': [1, 2, 3]
+}
+
+with open(filename, 'w') as f:
+json.dump(d, f)
+
+Q: SUM()
+A: Select SUM(MarksObtained) From Marksheet
+In the above example if we have another row like this:
+
+106    Italian    NULL
+
+Q: AVG()
+A: Select AVG(MarksObtained) From Marksheet
+In the above example if we have another row like this:
+
+106    Italian    NULL
+
+Q: disable read and write access
+A: // These rules don't allow anyone read or write access to your database
+{
+"rules": {
+".read": false,
+".write": false
+}
+}
+
+Q: Self Join
+A: SELECT Employees.Name,
+Bosses.Name AS Boss
+FROM Employees
+INNER JOIN Employees AS Bosses
+ON Employees.Boss_ID = Bosses.ID
+
+Q: Iterating the values of a map
+A: people := map[string]int{
+"john": 30,
+"jane": 29,
+"mark": 11,
+}
+
+for _, value := range people {
+fmt.Println("Age:", value)
+}
+
+Q: Get order by ID
+A: $orderid = 12345;
+$order = Mage::getModel('sales/order')->load($orderid);
+select * from sales_flat_order where entity_id=12345;
+
+Q: Removing value from a set
+A: mySet.delete(some_val);
+This function will return `true` if the value existed in the set and was removed, or `false` otherwise.
+
+Q: Restoring backups
+A: psql  backup.sql
+You may need to do a pg_dump followed by a pg_restore if you upgrade from one postgresql release to a newer one.
+
+Q: Hello world Shebang (linux)
+A: #!/usr/bin/env groovy
+println "Hello world"
+Can be executed from the command line if given execution permission as
+$ ./hello.groovy
+
+Q: Customizing Your Workspace
+A: When you’ve created an editor layout, you can save the layout and restore it any time. [Refer to this example for editor layouts][3].
+
+Q: Using the multiprocessing module to parallelise tasks
+A: import multiprocessing
+def fib(n):
+"""computing the Fibonacci in an inefficient way
+was chosen to slow down the CPU."""
+if n Python 2.2+
+
+Q: Defining a method
+A: def hello(name)
+"Hello, #{name}"
+end
+hello("World")
+# => "Hello, World"
+hello("World")
+# => "Hello, World"
+hello("All")
+# => "Hello, All"
+
+Q: Nesting depth
+A: // [css-rules]
+.dropdown-list {
+// [css-rules]
+ul {
+// [css-rules]
+li {
+margin: 1rem 0 0 1rem;
+}
+}
+}
+margin: 0;
+margin: 0;
+margin: 0 !important;
+
+Q: Navigation Controller with TabBar
+A: - Select the view controller for which we need to add navigation controller. Here let it be the Search View Controller as the selection display.
+
+Q: When-statement as expression
+A: val greeting = when (x) {
+"English" -> "How are you?"
+"German" -> "Wie geht es dir?"
+else -> "I don't know that language yet :("
+}
+print(greeting)
+
+Q: Structs cannot inherit
+A: class MyView: NSView { }  // works
+struct MyInt: Int { } // error: inheritance from non-protocol type 'Int'
+struct Vector: Hashable { ... }  // works
+
+Q: Use the C standard library
+A: #if os(macOS) || os(iOS) || os(tvOS) || os(watchOS)
+import Darwin
+#elseif os(Linux)
+import Glibc
+#endif
+// use open(), read(), and other libc features
+
+Q: Getting Started with CardView
+A: `CardView` is a member of the Android Support Library, and provides a layout for cards.
+compile 'com.android.support:cardview-v7:25.1.1'
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Q: Creating PID
+A: This is useful when you didn't store the PID from a previous command ``` iex(1)> self() #PID iex(2)> pid("0.138.0") #PID iex(3)> pid(0, 138, 0) #PID ```
+
+Q: [Required] attribute
+A: using System.ComponentModel.DataAnnotations;
+public class Person
+{
+public int PersonID { get; set; }
+
+[Required]
+public string PersonName { get; set; }
+}
+
+Q: Installating from source in a Debian/Ubuntu system
+A: libevent-dev libsasl2-dev libpq-dev \
+libpng12-dev libjpeg-dev \
+node-less node-clean-css -y
+$ git clone https://github.com/odoo/odoo.git -b 9.0 --depth=1
+
+Q: Observable properties
+A: var foo : Int by Delegates.observable("1") { property, oldValue, newValue ->
+println("${property.name} was changed from $oldValue to $newValue")
+}
+foo = 2
+
+Q: A basic ArrayField
+A: from django.db import models, FloatField
+from django.contrib.postgres.fields import ArrayField
+
+class Book(models.Model):
+ratings = ArrayField(FloatField())
+
+Q: Loading Image from external Storage
+A: String filename = "image.png";
+String imagePath = getExternalFilesDir() + "/" + filename;
+Picasso.with(context)
+.load(new File(imagePath))
+.into(imageView);
+
+Q: "Generate command" usage
+A: Class     | `ng generate class class-name`          | `ng g cl class-name`
+So, for example, if you run `ng generate component user-list` - angular-cli will:
+
+Q: Get first N rows with row limiting clause
+A: SELECT   val
+FROM     mytable
+ORDER BY val DESC
+FETCH FIRST 5 ROWS ONLY;
+SELECT * FROM (
+SELECT   val
+FROM     mytable
+ORDER BY val DESC
+) WHERE ROWNUM <= 5;
+
+Q: SELECT with LIKE(_)
+A: SELECT username FROM users WHERE users LIKE 'admin_';
++----------+
+| username |
++----------+
+| admin1   |
+| admin2   |
+| admin-   |
+| adminA   |
++----------+
+
+Q: Extract a folder from an archive
+A: There is an example for extract a folder from an archive in the current location :
+tar -xf archive-name.tar
+tar -xf archive-name.tar -C ./directory/destination
+
+Q: Custom delegation
+A: class MyDelegate {
+operator fun getValue(owner: Any?, property: KProperty): String {
+return "Delegated value"
+}
+}
+val foo : String by MyDelegate()
+println(foo)
+
+Q: DoggyView.swift
+A: import Foundation
+
+protocol DoggyView: NSObjectProtocol {
+func startLoading()
+func finishLoading()
+func setDoggies(_ doggies: [DoggyViewData])
+func setEmpty()
+}
+
+Q: Take method
+A: Public static IEnumerable Take(this IEnumerable source,int count);
+int[] numbers = { 1, 5, 8, 4, 9, 3, 6, 7, 2, 0 };
+var TakeFirstFiveElement = numbers.Take(5);
+
+Q: Skip Method
+A: Public static IEnumerable Skip(this IEnumerable source,int count);
+int[] numbers = { 1, 5, 8, 4, 9, 3, 6, 7, 2, 0 };
+var SkipFirstFiveElement = numbers.Take(5);
+
+Q: has_secure_password
+A: class User < ActiveRecord::Base
+user = User.new email: 'bob@bob.com', password: 'Password1', password_confirmation: 'Password1'
+user.authenticate('somepassword')
+
+Q: List.Map
+A: List.map string_of_int [ 1; 2; 3; 4 ]
+#- [ "1"; "2"; "3"; "4" ] : string list
+let square x = x * x in
+List.map square [ 1; 2; 3; 4 ]
+#- [ 1; 4; 9; 16 ] : int list
+
+Q: Getting the value of an Entry widget
+A: name_entry = tk.Entry(parent)
+...
+name = name_entry.get()
+name_var = tk.StringVar()
+name_entry = tk.Entry(parent, textvariable=name_var)
+...
+name = name_var.get()
+
+Q: Performance measurement with ReactJS
+A: import Perf from 'react-addons-perf' // ES6
+var Perf = require('react-addons-perf') // ES5 with npm
+var Perf = React.addons.Perf; // ES5 with react-with-addons.js
+
+Q: Setup
+A: Add a reference to **System.Core**, if it hasn't been added yet.
+At the top of the file, import the namespace:
+using System;
+using System.Linq;
+
+Imports System.Linq
+
+Q: Simple mask that fades an image from solid to transparent
+A: =====
+div {
+height: 200px;
+width: 200px;
+background: url(http://lorempixel.com/200/200/nature/1);
+mask-image: linear-gradient(to right, white, transparent);
+}
+====
+
+
+Q: Create Table From Select
+A: CREATE TABLE ClonedEmployees AS SELECT * FROM Employees;
+CREATE TABLE ModifiedEmployees AS
+SELECT Id, CONCAT(FName," ",LName) AS FullName FROM Employees
+WHERE Id > 10;
+
+Q: Create a Custom Mix Task
+A: # lib/mix/tasks/mytask.ex
+defmodule Mix.Tasks.MyTask do
+use Mix.Task
+
+@shortdoc "A simple mix task"
+def run(_) do
+IO.puts "YO!"
+end
+end
+$ mix compile
+$ mix my_task
+"YO!"
+
+Q: Access to Request in a Controller
+A: request->get('my_data');
+//retrieve $_GET variables from request
+$getRequest = $request->query->get('my_data');
+//get current locale
+$locale = $request->getLocale();
+}
+}
+
+Q: Alternative CSS
+A: 
+Some browsers allow alternate style sheets to apply if they are offered. By default they will not be applied, but usually they can be changed through the browser settings:
+
+Q: Octal Constants
+A: In Python 2, an octal literal could be defined as ```python >>> 0755 # only Python 2 ``` To ensure cross-compatibility, use ```python 0o755 # both Python 2 and Python 3 ```
+
+Q: SubGit
+A: [SubGit][1] may be used to perform a one-time import of an SVN repository to git.
+$ subgit import --non-interactive --svn-url http://svn.my.co/repos/myproject myproject.git
+
+Q: Lambdas can be emitted both as `Func` and `Expression`
+A: public class Person
+{
+public string Name { get; set; }
+public int Age { get; set; }
+}
+p => p.Age > 18
+public void AsFunc(Func func)
+public void AsExpression(Expression> expr)
+
+Q: Containers
+A: Use `.container` class for a responsive fixed width container.
+
+...
+
+Use `.container-fluid` class for a full width container, spanning the entire width of your viewport.
+
+...
+
+
+Q: hsl() Notation
+A: HSL stands for **hue** ("which color"), **saturation** ("how much color") and **lightness** ("how much white").
+p {
+color: hsl(240, 100%, 50%); /* Blue */
+}
+color: hsl(, %, %);
+
+Q: Setter injection (C#)
+A: public class Foo
+{
+private IBar _iBar;
+public IBar iBar { set { _iBar = value; } }
+public void DoStuff()
+{
+_iBar.DoSomething();
+}
+}
+public interface IBar
+{
+void DoSomething();
+}
+
+Q: Editing and Viewing Batch Files
+A: echo echo hello world > first.bat
+type first.bat
+notepad first.bat
+[2]: http://stackoverflow.com/documentation/batch-file/7129/creating-files-using-batch#t=201702221413450071942
+
+Q: Objects as a function
+A: class SomeClass {
+public function __invoke($param1, $param2) {
+// put your code here
+}
+}
+$instance = new SomeClass();
+$instance('First', 'Second'); // call the __invoke() method
+
+Q: Hello, World
+A: clickMe.TouchUpInside += (sender, e) =>
+{
+totalClicks++;
+if (totalClicks == 1)
+{
+lblClicks.Text = totalClicks + " Click";
+}
+
+else {
+lblClicks.Text = totalClicks + " Clicks";
+}
+};
+
+Q: Creating an enum (Python 2.4 through 3.3)
+A: pip install enum34
+from enum import Enum
+class Color(Enum):
+red = 1
+green = 2
+blue = 3
+
+print(Color.red)  # Color.red
+print(Color(1))  # Color.red
+print(Color['red'])  # Color.red
+
+Q: Constructor Injection (C#)
+A: public class Foo
+{
+private readonly IBar _iBar;
+public Foo(IBar iBar)
+{
+_iBar = iBar;
+}
+public void DoStuff()
+{
+_bar.DoSomething();
+}
+}
+public interface IBar
+{
+void DoSomething();
+}
+
+Q: Creating a named volume
+A: docker volume create --name="myAwesomeApp"
+docker run -d --name="myApp-1" -v="myAwesomeApp:/data/app" myApp:1.5.3
+docker run -d --name="myApp-2" --volumes-from "myApp-1" myApp:1.5.3
+
+Q: Imports
+A: You should order your imports and declarations like so: - `extern crate` declarations - `use` imports - External imports from other crates should come first - Re-exports (`pub use`)
+
+Q: Long
+A: Dim Value As Long
+Note that since a Long matches the width of a pointer in a 32 bit operating system, Longs are commonly used for storing and passing pointers to and from API functions.
+
+Q: Implicit "FOR loop" cursor
+A: BEGIN
+FOR x IN (SELECT * FROM emp WHERE sal `) in your PL/SQL loop
+* The loop opens the cursor and fetches one record at a time for every loop. At the end of the loop the cursor is closed.
+
+Q: Searching commit string in git log
+A: git log [options] --grep "search_string"
+git log --all --grep "removed file"
+Will search for `removed file` string in __all logs__ in __all branches__.
+git log --grep="add file" --invert-grep
+
+Q: Installation on Windows
+A: One source for precompiled wheels of many packages is [Christopher Gohkle's site][2]. Choose a version according to your Python version and system.
+An example for Python 3.5 on a 64 bit system:
+
+Q: Pathogen
+A: ===================
+git clone https://github.com/tpope/vim-pathogen.git
+" enable vim-pathogen
+runtime bundle/vim-pathogen/autoload/pathogen.vim
+execute pathogen#infect()
+==============
+========
+
+Q: Using a generator to find Fibonacci Numbers
+A: def fib(a=0, b=1):
+"""Generator that yields Fibonacci numbers. `a` and `b` are the seed values"""
+while True:
+yield a
+a, b = b, a + b
+
+f = fib()
+print(', '.join(str(next(f)) for _ in range(10)))
+
+Q: Calling Functions
+A: DECLARE
+x NUMBER := functionName(); --functions can be called in declaration section
+BEGIN
+x := functionName();
+END;
+
+IF functionName() = 100 THEN
+Null;
+END IF;
+
+SELECT functionName() FROM DUAL;
+
+Q: Create a new table
+A: rails generate migration CreateUsers name:string salary:decimal
+class CreateUsers < ActiveRecord::Migration[5.0]
+def change
+create_table :users do |t|
+t.string :name
+t.decimal :salary
+end
+end
+end
+
